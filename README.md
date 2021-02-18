@@ -1,24 +1,115 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column     | Type   | Options     |
+| ---------- | ------ | ----------- |
+| name       | string | null: false |
+| email      | string | null: false |
+| password   | string | null: false |
+| profile    | text   | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :posts
+- has_many :likes
+- has_many :groups through: :user_groups
+- has_many :user-groups
+- has_many :chats
+- has_many :relationships
 
-* Configuration
+## posts テーブル
 
-* Database creation
+| Column     | Type       | Options           |
+| ---------- | ---------- | ------------------|
+| text       | text       | null: false       |
+| created_at | datetime   | null: false       |
+| user       | references | foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many :likes
+- has_many :tags through: :post_tags
+- has_many :post_tags
 
-* Services (job queues, cache servers, search engines, etc.)
+## tags テーブル
 
-* Deployment instructions
+| Column     | Type       | Options           |
+| ---------- | ---------- | ------------------|
+| tag_name   | string     | null: false       |
 
-* ...
+### Association
+
+- has_many :posts through: :post_tags
+- has_many :post_tags
+
+
+## post_tags テーブル
+
+| Column     | Type       | Options           |
+| ---------- | ---------- | ------------------|
+| post       | references | foreign_key: true |
+| tag        | references | foreign_key: true |
+
+### Association
+
+- belongs_to :post
+- belongs_to :tag
+
+## likes テーブル
+
+| Column     | Type       | Options           |
+| ---------- | ---------- | ------------------|
+| post       | references | foreign_key: true |
+| user       | references | foreign_key: true |
+
+### Association
+
+- belongs_to :post
+- belongs_to :user
+
+## relationships テーブル
+
+| Column     | Type       | Options           |
+| ---------- | ---------- | ------------------|
+| follow_id  | integer    | null false        |
+| user       | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## groups テーブル
+
+| Column     | Type       | Options           |
+| ---------- | ---------- | ------------------|
+| group_name | string     | null false        |
+
+### Association
+
+- has_many :users
+
+## user_groups テーブル
+
+| Column     | Type       | Options           |
+| ---------- | ---------- | ------------------|
+| group      | references | foreign_key: true |
+| user       | references | foreign_key: true |
+
+### Association
+
+- belongs_to :group
+- belongs_to :user
+
+## chats テーブル
+
+| Column     | Type       | Options           |
+| ---------- | ---------- | ------------------|
+| group      | references | foreign_key: true |
+| user       | references | foreign_key: true |
+
+### Association
+
+- belongs_to :group
+- belongs_to :user
