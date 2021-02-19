@@ -1,0 +1,40 @@
+.side {
+  /* display: block; */
+}
+
+.side-header {
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  background-color: antiquewhite;
+}
+
+.app-icon {
+  width: 5vw;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 3vw;
+}
+
+.list-right {
+  display: flex;
+  list-style: none;
+}
+
+.login {
+  padding: 5px, 10px;
+  margin-right: 1vw;
+}
+
+.side-main {
+  width: 300px;
+  height: calc(100vh - 170px);
+  background-color: burlywood;
+}
+
+.side-footer {
+  height: 70px;
+  width: 300px;
+  background-color: chocolate;
+}
