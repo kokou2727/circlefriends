@@ -1,5 +1,28 @@
-.main-header {
-  height: 100vh;
-  width: calc(100vw - 300px);
-  background-color: rgba(212, 192, 160, 0.348);
+.wrapper {
+  display: flex;
 }
+.side-bar {
+  background-color: rgb(219, 205, 187);
+  width: 300px;
+  height: 100vh;
+  border-right: solid 1px #ececec;
+}
+.main {
+  background-color: #fef8f3ce;
+  width: calc(100vw - 300px);
+}
+
+.post-header {
+height: 100px;
+padding: 0 40px;
+display: flex;
+justify-content: space-between;
+border-bottom: solid 1px #c3c3c3;
+}
+
+.post-main {
+  padding: 46px 40px 0;
+  height: calc(100vh - 100px);
+  overflow: scroll;
+}
+
