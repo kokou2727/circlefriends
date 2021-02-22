@@ -22,7 +22,51 @@ border-bottom: solid 1px #c3c3c3;
 
 .post-main {
   padding: 46px 40px 0;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 100px - 100px);
   overflow: scroll;
 }
 
+.form {
+  background-color: #dddddd;
+  height: 100px;
+  padding: 20px 40px;
+  display: flex;
+}
+
+.form-input {
+  background-color: white;
+  width: 100%;
+  display: flex;
+}
+
+.form-text{
+  height: auto;
+  width: auto;
+  padding-left: 10px;
+  width: 100%;
+  border: none;
+}
+
+.form-send{
+  background-color: #38aef0;
+  padding: 0 20px;
+  margin-left: 15px;
+  height: 50px;
+  font-size: 16px;
+  color: white;
+  border: none;
+}
+
+.form-image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden{
+  display: none;
+}
