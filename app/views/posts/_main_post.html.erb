@@ -2,27 +2,7 @@
 </div>
 
 <div class='post-main'>
-  <% @posts.each do |post| %>
-    <div class="post">
-    <div class="upper-post">
-      <%= link_to image_tag("app-icon2.png", class:"post-icon"), "/" %>
-      <div class="post-user">
-        <%= post.user.name %>
-      </div>
-      <div class="date">
-        <%= time_ago_in_words(post.created_at) %>前
-      </div>
-    </div>
-    <div class="unde-post">
-      <div class="post-content">
-        <%= post.text %>
-      </div>
-      <div class='image'>
-        <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
-      </div>
-    </div>
-  </div>
-  <% end %>
+  <%= render partial: "post" %>
 </div>
 
 <%= form_with model: @post, class: 'form', local: true do |f| %>
