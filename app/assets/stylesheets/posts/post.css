@@ -1,0 +1,49 @@
+.post {
+  margin: 10px 0 0 0;
+}
+
+.post:hover {
+  color: rgb(161, 108, 108);
+}
+
+.upper-post {
+  display: flex;
+  align-items: center;
+}
+
+.post-user {
+  color: #434a54;
+  font-size: 25px;
+  font-family: 'Vollkorn', serif;
+}
+
+.post-user:hover {
+  color: rgb(113, 82, 50);
+}
+
+.date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.under-post {
+  margin-top: 10px;
+}
+
+.post-content {
+  color: #434a54;
+  font-size: 18px;
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 5px 5px 5px 10px;
+  margin-bottom: 40px;
+}
+
+.post-icon {
+  width: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 3vw;
+  object-fit:cover;
+	border-radius:50%;
+}

@@ -1,9 +1,10 @@
+
 .side-header {
-  width: 300px;
   height: 100px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
-  background-color: antiquewhite;
+  justify-content: space-between;
 }
 
 .app-icon {
@@ -11,26 +12,77 @@
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 3vw;
+  object-fit:cover;
+	border-radius:50%;
 }
 
 .list-right {
   display: flex;
   list-style: none;
+  font-size: 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
 }
 
 .login {
   padding: 5px, 10px;
-  margin-right: 1vw;
+  margin-right: 10px;
+}
+
+.sign-up {
+  padding: 5px, 10px;
+  margin-right: 5px;
+}
+
+.logout {
+  padding: 5px, 10px;
+  margin-right: 5px;
 }
 
 .side-main {
-  width: 300px;
-  height: calc(100vh - 170px);
-  background-color: burlywood;
+  height: calc(100vh - 10vh - 100px);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.side-list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.home {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.home-icon {
+  width: 35px;
+  margin-right: 10px;
+}
+
+.home-list a {
+  color: black;
+}
+
+.circle {
+
+}
+
+.profile {
+
+}
+
+.post {
 }
 
 .side-footer {
-  height: 70px;
-  width: 300px;
-  background-color: chocolate;
+  height: 10vh;
+}
+
+.footer-user {
+  font-family: 'Vollkorn', serif;
+  font-size: 22px;
 }

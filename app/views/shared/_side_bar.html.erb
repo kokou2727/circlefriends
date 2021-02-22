@@ -1,6 +1,6 @@
 <div class='side'>
   <div class="side-header">
-    <%= link_to image_tag("app-icon.png", class:"app-icon"), "/" %>
+    <%= link_to image_tag("app-icon2.png", class:"app-icon"), "/" %>
     <div class="list-right">
       <% if user_signed_in? %>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
@@ -13,13 +13,27 @@
 
   <div class='side-main'>
     <ul class='side-list'>
-      <li><%= link_to 'ホーム', "#", class: "home-list" %></li>
-      <li><%= link_to 'サークル', "#", class: "circle-list" %></li>
-      <li><%= link_to 'プロフィール', "#", class: "profile-list" %></li>
-      <li><%= link_to '投稿する', "#", class: "category-list" %></li>
+      <div class='home'>
+        <%= link_to image_tag("home.png", class:"home-icon"), "/" %>
+        <li><%= link_to 'ホーム', "#", class: "home-list" %></li>
+      </div>
+      <div class='circle'>
+        <li><%= link_to 'サークル', "#", class: "circle-list" %></li>
+      </div>
+      <div class='profile'>
+        <li><%= link_to 'プロフィール', "#", class: "profile-list" %></li>
+      </div>
+      <div class='post'>
+        <li><%= link_to '投稿する', "#", class: "post-list" %></li>
+      </div>
     </ul>
   </div>
   
   <div class='side-footer'>
+    <div class='footer-user'>
+    <% if user_signed_in? %>
+      <%= current_user.name %>
+    <% end %>
+    </div>
   </div>
 </div>
