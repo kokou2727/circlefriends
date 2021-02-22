@@ -1,9 +1,9 @@
 <% @posts.each do |post| %>
     <div class="post">
     <div class="upper-post">
-      <%= link_to image_tag("app-icon2.png", class:"post-icon"), "/" %>
+      <%= link_to image_tag("app-icon2.png", class:"post-icon"), user_path(post.user_id) %>
       <div class="post-user">
-        <%= post.user.name %>
+        <%= link_to "#{post.user.name}", user_path(post.user_id)%>
       </div>
       <div class="date">
         <%= time_ago_in_words(post.created_at) %>前
