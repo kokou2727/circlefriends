@@ -10,7 +10,7 @@
         <%= post.user.name %>
       </div>
       <div class="date">
-        <%= l post.created_at %>
+        <%= time_ago_in_words(post.created_at) %>前
       </div>
     </div>
     <div class="unde-post">
