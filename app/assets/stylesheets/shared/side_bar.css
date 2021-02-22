@@ -52,14 +52,14 @@
 }
 
 .home {
-  margin: 0 auto;
+  margin:  5px 60px 0;
   display: flex;
   align-items: center;
 }
 
 .home-icon {
   width: 35px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .home-list a {
@@ -67,16 +67,26 @@
 }
 
 .circle {
+  margin:  5px 60px 0;
+  display: flex;
+  align-items: center;
+}
 
+.circle-icon {
+  width: 35px;
+  margin-right: 20px;
 }
 
 .profile {
-
+  margin:  5px 60px 0;
+  display: flex;
+  align-items: center;
 }
 
-.post {
+.profile-icon {
+  width: 35px;
+  margin-right: 20px;
 }
-
 .side-footer {
   height: 10vh;
 }

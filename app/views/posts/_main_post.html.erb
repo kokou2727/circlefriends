@@ -17,7 +17,9 @@
       <div class="post-content">
         <%= post.text %>
       </div>
-      <%= image_tag post.image.variant(resize: '500x500'), class: 'post-image' if post.image.attached? %>
+      <div class='image'>
+        <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
+      </div>
     </div>
   </div>
   <% end %>
@@ -25,11 +27,11 @@
 
 <%= form_with model: @post, class: 'form', local: true do |f| %>
   <div class="form-input">
-    <%= f.text_field :text, class: 'form-text', placeholder: '投稿しよう！' %>
+    <%= f.text_area :text, class: 'form-text', placeholder: '投稿しよう！', rows:"10", wrap:"hard" %>
     <label class="form-image">
-      <span class="image-file">画像</span>
+      <%= image_tag("image.png", class:"image-icon") %>
       <%= f.file_field :image, class: 'hidden' %>
     </label>
   </div>
-  <%= f.submit '送信', class: 'form-send' %>
+  <%= f.submit '投稿', class: 'form-send' %>
 <% end %>
