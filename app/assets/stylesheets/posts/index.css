@@ -25,9 +25,8 @@ border-bottom: solid 1px #c3c3c3;
 }
 
 .post-main {
-  padding: 46px 40px 0;
   height: calc(100vh - 100px - 100px);
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .form {
@@ -49,6 +48,7 @@ border-bottom: solid 1px #c3c3c3;
   padding-left: 10px;
   width: 100%;
   border: none;
+  word-break: break-all;
 }
 
 .form-send{
@@ -62,13 +62,16 @@ border-bottom: solid 1px #c3c3c3;
 }
 
 .form-image {
-  font-size: 12px;
-  background-color: lightblue;
-  color: white;
-  padding: 12px;
   width: 60px;
   margin: 5px 10px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-icon{
+  width: 30px;
+  height: auto;
 }
 
 .hidden{

@@ -1,9 +1,6 @@
 .post {
   margin: 10px 0 0 0;
-}
-
-.post:hover {
-  color: rgb(161, 108, 108);
+  border-top: solid 1px #c3c3c3;
 }
 
 .upper-post {
@@ -35,8 +32,9 @@
   color: #434a54;
   font-size: 18px;
   font-family: 'Noto Sans JP', sans-serif;
-  padding: 5px 5px 5px 10px;
-  margin-bottom: 40px;
+  margin: 0 20px 20px;
+  word-break: break-all;
+  white-space: pre-wrap;
 }
 
 .post-icon {
@@ -46,4 +44,13 @@
   margin-right: 3vw;
   object-fit:cover;
 	border-radius:50%;
+}
+
+.image {
+  text-align: center;
+}
+
+.post-image {
+  width: 400px;
+  height: auto;
 }
