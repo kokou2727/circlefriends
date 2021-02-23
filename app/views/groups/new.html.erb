@@ -1,0 +1,13 @@
+<h1>サークル新規作成</h1>
+
+<%= form_with url: groups_path, model: @group , local: true do |f| %>
+  <div class="group-new__forms">
+    <div class="group-new__forms__name">
+      <% f.label :group_name, 'サークル名', class:"group-new__forms__name--label" %>
+      <%= f.text_field :group_name, class:"group-new__forms__name--field" %>
+    </div>
+    <div class="group-new__forms__new-btn">
+      <%= f.submit '新規作成', class:"group-new__forms__new-btn__button"%>
+    </div>
+  </div>
+<% end %>
