@@ -6,6 +6,19 @@
 .my-page-header {
   height: 50px;
   border-bottom: solid 1px #c3c3c3;
+  display: flex;
+  align-items: center;
+}
+
+.back-icon {
+  width: 60px;
+  height: auto;
+}
+
+.my-page-name {
+  font-size: 25px;
+  margin-left: 20px;
+  padding: 5px;
 }
 
 .my-posts-list {

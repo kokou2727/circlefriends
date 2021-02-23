@@ -5,7 +5,10 @@
 
   <div class='my-page'>
     <div class='my-page-header'>
-      <%= @user.name %>
+      <%= link_to image_tag("back_button.png", class:"back-icon"), root_path %>
+      <h2 class='my-page-name'>
+        <%= @user.name %>
+      </h2>
     </div>
     <div class='my-posts-list'>
       <%= render partial: "posts/post" %>
