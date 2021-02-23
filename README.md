@@ -73,7 +73,7 @@
 
 | Column     | Type       | Options           |
 | ---------- | ---------- | ------------------|
-| follow_id  | integer    | null false        |
+| follow_id  | references | foreign_key: true |
 | user       | references | foreign_key: true |
 
 ### Association
