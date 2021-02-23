@@ -21,6 +21,16 @@
   padding: 5px;
 }
 
+.unfollow-button {
+  width: 60px;
+  height: auto;
+}
+
+.follw-button{
+  width: 60px;
+  height: auto;
+}
+
 .my-posts-list {
   height: calc(100vh - 100px);
   overflow-y: scroll;
