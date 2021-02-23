@@ -14,17 +14,19 @@
   <div class='side-main'>
     <ul class='side-list'>
       <div class='home'>
-        <%= link_to image_tag("home.png", class:"home-icon"), "/" %>
-        <li><%= link_to 'ホーム', "#", class: "home-list" %></li>
+        <%= link_to image_tag("home.png", class:"home-icon"), root_path %>
+        <li><%= link_to 'ホーム', root_path, class: "home-list" %></li>
       </div>
       <div class='circle'>
       <%= link_to image_tag("circle.png", class:"circle-icon"), "/" %>
         <li><%= link_to 'サークル', "#", class: "circle-list" %></li>
       </div>
-      <div class='profile'>
-      <%= link_to image_tag("profile.png", class:"profile-icon"), "/" %>
-        <li><%= link_to 'プロフィール', "#", class: "profile-list" %></li>
-      </div>
+      <% if user_signed_in? %>
+        <div class='profile'>
+        <%= link_to image_tag("profile.png", class:"profile-icon"), user_path(current_user) %>
+          <li><%= link_to 'プロフィール', user_path(current_user), class: "profile-list" %></li>
+        </div>
+      <% end %>
     </ul>
   </div>
   
