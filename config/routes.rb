@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resources :posts, only: [:index, :create]
   resources :users, only: :show
+  resources :relationships, only: [:create, :destroy]
 end
