@@ -4,26 +4,24 @@
   </div>
 
   <div class='chats'>
-    <%= @group.group_name %>
-    <div class="chats_list">
-      <% @chats.each do |chat| %>
-        <p>
-          <%= chat.user.name %>
-          <%= chat.message %>
-          <%= image_tag chat.image, class: 'post-image' if chat.image.attached? %>
-        </p>
+    <div class='chats-header'>
+      <%= @group.group_name %>
+    </div>
+    <div class='chats-main'>
+      <%= render "message"%>
+    </div>
+    <div class='chat-form'>
+      <%= form_with model: [@group, @chat], class: 'form', local: true do |f| %>
+        <div class="form-input">
+          <%= f.text_area :message, class: 'form-text', placeholder: 'メッセージを入力', rows:"10", wrap:"hard" %>
+          <label class="form-image">
+            <%= image_tag("image.png", class:"image-icon") %>
+            <%= f.file_field :image, class: 'hidden' %>
+          </label>
+        </div>
+        <%= f.submit '投稿', class: 'form-send' %>
       <% end %>
     </div>
-    <%= form_with model: [@group, @chat], class: 'form', local: true do |f| %>
-      <div class="form-input">
-        <%= f.text_area :message, class: 'form-text', placeholder: 'メッセージを入力', rows:"10", wrap:"hard" %>
-        <label class="form-image">
-          <%= image_tag("image.png", class:"image-icon") %>
-          <%= f.file_field :image, class: 'hidden' %>
-        </label>
-      </div>
-      <%= f.submit '投稿', class: 'form-send' %>
-    <% end %>
   </div>
 
   <div class='left-bar'>
