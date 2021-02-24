@@ -18,8 +18,8 @@
         <li><%= link_to 'ホーム', root_path, class: "home-list" %></li>
       </div>
       <div class='circle'>
-      <%= link_to image_tag("circle.png", class:"circle-icon"), "/" %>
-        <li><%= link_to 'サークル', "#", class: "circle-list" %></li>
+      <%= link_to image_tag("circle.png", class:"circle-icon"), groups_path %>
+        <li><%= link_to 'サークル', groups_path, class: "circle-list" %></li>
       </div>
       <% if user_signed_in? %>
         <div class='profile'>
