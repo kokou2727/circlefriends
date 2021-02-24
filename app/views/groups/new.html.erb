@@ -1,13 +1,35 @@
-<h1>サークル新規作成</h1>
-
-<%= form_with url: groups_path, model: @group , local: true do |f| %>
-  <div class="group-new__forms">
-    <div class="group-new__forms__name">
-      <% f.label :group_name, 'サークル名', class:"group-new__forms__name--label" %>
-      <%= f.text_field :group_name, class:"group-new__forms__name--field" %>
+<div class='group-form'>
+  <h1>新規チャットルーム</h1>
+  <%=form_with model: @group, local: true do |f|%>
+    <div class='group-form__field'>
+      <div class='group-form__field--left'>
+        <%= f.label :チャットルーム名, class: 'groupform__label'%>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%= f.text_field :group_name, class: 'group_name group-form__input', placeholder: 'チャットルーム名を入力してください'%>
+      </div>
     </div>
-    <div class="group-new__forms__new-btn">
-      <%= f.submit '新規作成', class:"group-new__forms__new-btn__button"%>
+    <div class='group-form__field'>
     </div>
-  </div>
-<% end %>
+    <div class='group-form__field'>
+      <div class='group-form__field--left'>
+        <label class='group-form__label' for='group_チャットメンバー'>チャットメンバー</label>
+      </div>
+      <div class='group-form__field--right'>
+        <select name="group[user_ids[]">
+          <option value="">チャットするユーザーを選択してください</option>
+          <% User.where.not(id: current_user.id).each do |user| %>
+            <option value=<%= user.id %>><%= user.name %></option>
+          <% end %>
+        </select>
+        <input name="group[user_ids][]" type="hidden" value=<%= current_user.id %>>
+      </div>
+    </div>
+    <div class='group-form__field'>
+      <div class='group-form__field--left'></div>
+      <div class='group-form__field--right'>
+        <%= f.submit class: 'group-form__action-btn'%>
+      </div>
+    </div>
+  <% end %>
+</div>
