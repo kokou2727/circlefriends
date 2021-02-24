@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :group_users
   has_many :groups, through: :group_users
 
+  has_many :chats
+
   validates :name, presence: true
 
   def follow(other_user)

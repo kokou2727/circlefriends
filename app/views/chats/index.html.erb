@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class='side-bar'>
+    <%= render "shared/side_bar" %>
+  </div>
+
+  <div class='chats'>
+    <div class='chats-header'>
+      <%= @group.group_name %>
+    </div>
+    <div class='chats-main'>
+      <%= render "message"%>
+    </div>
+    <div class='chat-form'>
+      <%= form_with model: [@group, @chat], class: 'form', local: true do |f| %>
+        <div class="form-input">
+          <%= f.text_area :message, class: 'form-text', placeholder: 'メッセージを入力', rows:"10", wrap:"hard" %>
+          <label class="form-image">
+            <%= image_tag("image.png", class:"image-icon") %>
+            <%= f.file_field :image, class: 'hidden' %>
+          </label>
+        </div>
+        <%= f.submit '投稿', class: 'form-send' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class='left-bar'>
+    <%= render "shared/left_bar" %>
+  <div>
+</div>
