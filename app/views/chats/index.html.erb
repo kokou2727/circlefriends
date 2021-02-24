@@ -1,5 +1,27 @@
-<%= @group.group_name %>
-<div id='chats'>
-  <%= render partial: 'message', collection: @chats %>
-  
+<div class="wrapper">
+  <div class='side-bar'>
+    <%= render "shared/side_bar" %>
+  </div>
+
+  <div class='chats'>
+    <%= @group.group_name %>
+    <div class="chats_list">
+      <% @chats.each do |chat| %>
+        <p>
+          <%= chat.user.name %>
+          <%= chat.message %>
+        </p>
+      <% end %>
+    </div>
+    <%= form_with model: [@group, @chat], class: 'form', local: true do |f| %>
+      <div class="form-input">
+        <%= f.text_area :message, class: 'form-text', placeholder: 'メッセージを入力', rows:"10", wrap:"hard" %>
+      </div>
+      <%= f.submit '投稿', class: 'form-send' %>
+    <% end %>
+  </div>
+
+  <div class='left-bar'>
+    <%= render "shared/left_bar" %>
+  <div>
 </div>
