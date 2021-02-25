@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resources :posts, only: [:index, :create]
   resources :users, only: [:show, :destroy]
-  resources :relationships, only: :create
+  resources :relationships, only: [:create, :destroy]
   resources :group_users, only: :destroy
   resources :groups, only: [:index, :new, :create, :edit, :update, :destroy] do
     resources :chats, only: [:index, :create, :destroy]
