@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-    <div class="post">
+  <div class="post">
     <div class="upper-post">
       <%= link_to image_tag("app-icon2.png", class:"post-icon"), user_path(post.user_id) %>
       <div class="post-user">
@@ -9,7 +9,7 @@
         <%= time_ago_in_words(post.created_at) %>前
       </div>
     </div>
-    <div class="unde-post">
+    <div class="under-post">
       <div class="post-content">
         <%= post.text %>
       </div>
@@ -18,4 +18,4 @@
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>

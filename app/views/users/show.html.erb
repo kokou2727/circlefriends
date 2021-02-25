@@ -22,6 +22,10 @@
           <% end %>
         <% end %>
       <% end %>
+      <div class='follow-follower'>
+        <span class='follow'><%= link_to "フォロー#{@user.followings.count}", "#" %></span>
+        <span class='follower'><%= link_to "フォロワー#{@user.followers.count}", "#" %></span>
+      </div>
     </div>
     <div class='my-posts-list'>
       <%= render partial: "posts/post" %>
