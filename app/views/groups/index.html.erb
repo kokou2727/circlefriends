@@ -7,12 +7,12 @@
       <%= link_to 'グループ新規作成', new_group_path %>
     </div>
     <% current_user.groups.each do |group| %>
-    <div class="group">
+    <div class="group-infomation">
       <div class="group-name">
         <%= link_to group.group_name, group_chats_path(group) %>
       </div>
     </div>
-  <% end %>
+    <% end %>
   <div class='left-bar'>
     <%= render "shared/left_bar" %>
   <div>
