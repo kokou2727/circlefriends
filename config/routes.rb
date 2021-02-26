@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'posts/index'
   get 'users/add_user_to_group'
+  get 'group_users/participate'
   root to: "posts#index"
   resources :posts, only: [:index, :create]
   resources :users, only: [:index, :show]

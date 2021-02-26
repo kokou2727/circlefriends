@@ -11,6 +11,9 @@
       <div class="group-name">
         <%= link_to group.group_name, group_chats_path(group) %>
       </div>
+      <% unless GroupUser.find_by(user_id: current_user.id, group_id: group.id).permit %>
+        <%= link_to '参加', group_users_participate_path(group_id: group.id) %>
+      <% end %>
     </div>
     <% end %>
   <div class='left-bar'>

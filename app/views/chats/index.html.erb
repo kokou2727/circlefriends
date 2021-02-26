@@ -7,10 +7,7 @@
     <div class='chats-header'>
       <%= @group.group_name %>
       <%= link_to "編集", users_path(current_user)%>
-      <%= form_for(current_user.group_users.find_by(user_id: current_user.id, group_id: @group.id), method: :delete ) do |f| %>
-        <%= hidden_field_tag :group_id, @group.id %>
-        <%= f.submit '退出' %>
-      <% end %>
+      <%= link_to '退出', group_user_path(@group, group_id: @group.id), method: :delete %>
       <%= link_to "削除", group_path(@group), method: :delete %>
     </div>
     <div class='chats-main'>

@@ -10,7 +10,9 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to action: :index
+      group_user = GroupUser.find_by(user_id: current_user.id, group_id: @group.id)
+      group_user.update(permit: true)
+      redirect_to group_chats_path(@group)
     else
       render :new
     end
