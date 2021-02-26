@@ -6,9 +6,9 @@
   <div class='chats'>
     <div class='chats-header'>
       <%= @group.group_name %>
-      <%= link_to "編集" , "#"%>
-      <%= link_to "退出" , "#"%>
-      <%= link_to "削除" , "#"%>
+      <%= link_to "編集", users_path(current_user)%>
+      <%= link_to '退出', group_user_path(@group, group_id: @group.id), method: :delete %>
+      <%= link_to "削除", group_path(@group), method: :delete %>
     </div>
     <div class='chats-main'>
       <%= render "message"%>

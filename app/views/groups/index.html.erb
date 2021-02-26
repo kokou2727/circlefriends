@@ -7,12 +7,15 @@
       <%= link_to 'グループ新規作成', new_group_path %>
     </div>
     <% current_user.groups.each do |group| %>
-    <div class="group">
+    <div class="group-infomation">
       <div class="group-name">
         <%= link_to group.group_name, group_chats_path(group) %>
       </div>
+      <% unless GroupUser.find_by(user_id: current_user.id, group_id: group.id).permit %>
+        <%= link_to '参加', group_users_participate_path(group_id: group.id) %>
+      <% end %>
     </div>
-  <% end %>
+    <% end %>
   <div class='left-bar'>
     <%= render "shared/left_bar" %>
   <div>
