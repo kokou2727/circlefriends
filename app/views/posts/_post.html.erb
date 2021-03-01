@@ -1,20 +1,26 @@
 <% @posts.each do |post| %>
   <div class="post">
-    <div class="upper-post">
-      <%= link_to image_tag("app-icon2.png", class:"post-icon"), user_path(post.user_id) %>
-      <div class="post-user">
-        <%= link_to "#{post.user.name}", user_path(post.user_id)%>
-      </div>
-      <div class="date">
-        <%= time_ago_in_words(post.created_at) %>前
-      </div>
+    <div class='post-icon-area'>
+    <%= link_to image_tag("app-icon2.png", class:"post-icon"), user_path(post.user_id) %>
     </div>
-    <div class="under-post">
-      <div class="post-content">
-        <%= post.text %>
+    <div class='post-area'>
+      <div class="upper-post">
+        <div class="post-user">
+          <%= link_to "#{post.user.name}", user_path(post.user_id)%>
+        </div>
+        <div class="date">
+          <%= time_ago_in_words(post.created_at) %>前
+        </div>
       </div>
-      <div class='image'>
-        <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
+      <div class="middle-post">
+        <div lang="ja" dir="auto" class="post-content-area">
+          <span class="post-content"><%= post.text %></span>
+        </div>
+        <div class='image'>
+          <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
+        </div>
+      </div>
+      <div class='under-post'>
       </div>
     </div>
   </div>

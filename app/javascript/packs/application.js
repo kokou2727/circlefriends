@@ -8,6 +8,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
+require('bootstrap/dist/js/bootstrap.min.js')
 require('../invite')
 require('../group_participation')
 
