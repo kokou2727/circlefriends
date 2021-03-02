@@ -1,14 +1,16 @@
-<div class="chats_list">
-  <% @chats.each do |chat| %>
-    <p>
-      <%= chat.user.name %>
-      <span class="date">
-        <%= time_ago_in_words(chat.created_at) %>前
-      </span>
-      <div class='chat-message'>
-        <%= chat.message %>
-      </div>
-      <%= image_tag chat.image, class: 'post-image' if chat.image.attached? %>
-    </p>
-  <% end %>
+<div class='chat-content'  id='chat_list'>
+  <div class="chats_list" >
+    <% @chats.each do |chat| %>
+      <p>
+        <%= chat.user.name %>
+        <span class="date">
+          <%= time_ago_in_words(chat.created_at) %>前
+        </span>
+        <div class='chat-message'>
+          <%= chat.message %>
+        </div>
+      </p>
+    <% end %>
+    <p id="new-message"></p>
+  </div>
 </div>
