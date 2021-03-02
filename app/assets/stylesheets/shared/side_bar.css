@@ -7,7 +7,7 @@
 }
 
 .app-icon {
-  width: 5vw;
+  width: 40px;
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 3vw;
@@ -43,10 +43,10 @@
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: bold;
   font-size: 20px;
+  text-align: center;
 }
 
 .side-list {
-  text-align: center;
   display: flex;
   flex-direction: column;
 }

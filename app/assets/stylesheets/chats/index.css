@@ -1,6 +1,6 @@
 .chats {
   background-color: #fef8f3ce;
-  width: calc(100vw - 300px - 300px);
+  width: 610px;
 }
 
 .chats-header {
@@ -16,9 +16,16 @@
   overflow-y: scroll;
 }
 
-.form {
+.new_message_form {
   background-color: #dddddd;
   height: 100px;
   padding: 20px 40px;
   display: flex;
+}
+.chat-right  {
+  float: right;
+}
+
+.chat-left {
+  float: left;
 }
