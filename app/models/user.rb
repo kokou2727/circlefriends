@@ -16,7 +16,10 @@ class User < ApplicationRecord
 
   has_many :chats
 
+  has_one_attached :image
+
   validates :name, presence: true
+  validates :profile,  length: { maximum: 250 }
 
   def follow(other_user)
     unless self == other_user

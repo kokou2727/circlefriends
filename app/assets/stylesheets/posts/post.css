@@ -19,10 +19,23 @@
   font-family: 'Vollkorn', serif;
 }
 
+.post-job {
+  color: #434a54;
+  font-size: 15px;
+  color: #f39c12;
+  opacity: 0.75;
+  margin: 10px 5px 10px 10px;
+}
+
+.nakaten {
+  color: #999;
+  font-size: 12px;
+}
+
 .date {
   color: #999;
   font-size: 12px;
-  padding-left: 10px;
+  margin-left: 5px;
 }
 
 .middle-post {

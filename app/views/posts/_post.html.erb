@@ -1,13 +1,17 @@
 <% @posts.each do |post| %>
   <div class="post">
     <div class='post-icon-area'>
-    <%= link_to image_tag("app-icon2.png", class:"post-icon"), user_path(post.user_id) %>
+      <%= link_to image_tag(post.user.image, class:"post-icon"), user_path(post.user_id) %>
     </div>
     <div class='post-area'>
       <div class="upper-post">
         <div class="post-user">
           <%= link_to "#{post.user.name}", user_path(post.user_id)%>
         </div>
+        <div class="post-job">
+          <%= link_to "#{post.user.job}", user_path(post.user_id)%>
+        </div>
+        <span class='nakaten'>・</span>
         <div class="date">
           <%= time_ago_in_words(post.created_at) %>前
         </div>
