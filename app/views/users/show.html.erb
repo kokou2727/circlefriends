@@ -40,7 +40,7 @@
           <%= image_tag "profile.png", class:"profile"  %>
         <% end %>
           <figcaption>
-            <h3><%= @user.name %><span>Engineer</span></h3>
+            <h3><%= @user.name %><span><%= @user.job %></span></h3>
             <div class="icons">
               <% unless current_user == @user %>
                 <% if current_user.following?(@user) %>

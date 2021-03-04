@@ -22,12 +22,16 @@
           <figcaption>
             <div class='user-information-edit'>
               <div class='edit-name-area' style='margin-bottom: 20px'>
-                <h3><span style='width: auto'>名前</span></h3>
+                <h3><span>名前</span></h3>
                 <%= f.text_field :name, class: 'edit-name', maxlength: '30'%>
               </div>
-              <h3><span>Engineer</span></h3>
+              <div class='edit-job-area' style='margin-bottom: 20px'>
+                <h3><span>お仕事</span></h3>
+                <%= f.text_field :job, class: 'edit-job'%>
+              </div>
               <div class='edit-profile-area' style='margin-bottom: 20px'>
-                <%= f.text_area :profile, class: 'edit-profile'%>
+              <h3><span>自己紹介</span></h3>
+                <%= f.text_area :profile, class: 'edit-profile', maxlength: '200'%>
               </div>
               <div>
               <%= f.submit 'OK', class: 'user-edit-btn' %>
