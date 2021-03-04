@@ -1,0 +1,44 @@
+<div class="wrapper">
+  <div class='side-bar'>
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class='user-edit'>
+      <div class='profile-area' style="height: 100% ">
+        <div class="snip1344" style="height: 100%">
+        <%= form_with model: @user, local: true do |f| %>
+          <% if @user.image.present? %>
+            <%= image_tag @user.image, class: "background" %>
+            <label>
+              <%= image_tag @user.image, class: "profile" %>
+              <%= f.file_field :image, class:"hidden" %>
+            </label>
+          <% else %>
+            <%= image_tag "profile.png", class:"background" %>
+            <label>
+              <%= image_tag "profile.png", class:"profile"  %>
+              <%= f.file_field :image, class:"hidden" %>
+            </label>
+          <% end %>
+          <figcaption>
+            <div class='user-information-edit'>
+              <div class='edit-name-area' style='margin-bottom: 20px'>
+                <h3><span style='width: auto'>名前</span></h3>
+                <%= f.text_field :name, class: 'edit-name', maxlength: '30'%>
+              </div>
+              <h3><span>Engineer</span></h3>
+              <div class='edit-profile-area' style='margin-bottom: 20px'>
+                <%= f.text_area :profile, class: 'edit-profile'%>
+              </div>
+              <div>
+              <%= f.submit 'OK', class: 'user-edit-btn' %>
+              </div>
+            </div>
+          </figcaption>
+        <% end %>
+        </div>
+      </div>
+  </div>
+  <div class='left-bar'>
+    <%= render "shared/left_bar" %>
+  <div>
+</div>

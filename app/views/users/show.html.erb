@@ -26,9 +26,46 @@
         <span class='follow'><%= link_to "フォロー#{@user.followings.count}", "#" %></span>
         <span class='follower'><%= link_to "フォロワー#{@user.followers.count}", "#" %></span>
       </div>
+      <%= link_to '編集', edit_user_path(@user)%>
     </div>
-    <div class='my-posts-list'>
-      <%= render partial: "posts/post" %>
+
+    <div class='show-main'>
+      <div class='profile-area'>
+        <figure class="snip1344" style="height: 500px">
+        <% if @user.image.present? %>
+          <%= image_tag @user.image, class: "background" %>
+          <%= image_tag @user.image, class: "profile" %>
+        <% else %>
+          <%= image_tag "profile.png", class:"background" %>
+          <%= image_tag "profile.png", class:"profile"  %>
+        <% end %>
+          <figcaption>
+            <h3><%= @user.name %><span>Engineer</span></h3>
+            <div class="icons">
+              <% unless current_user == @user %>
+                <% if current_user.following?(@user) %>
+                  <%= form_for(current_user.relationships.find_by(follow_id: @user.id), html: { method: :delete }) do |f| %>
+                    <%= hidden_field_tag :follow_id, @user.id %>
+                    <%= f.submit 'Unfollow', class: 'unfollw-button' %>
+                  <% end %>
+                <% else %>
+                  <%= form_for(current_user.relationships.build) do |f| %>
+                    <%= hidden_field_tag :follow_id, @user.id %>
+                    <%= f.submit 'Follow', class: 'follw-button' %>
+                  <% end %>
+                <% end %>
+              <% end %>
+              <a href="#"> <i class="ion-social-twitter-outline"></i></a>
+              <a href="#"> <i class="ion-social-vimeo-outline"></i></a>
+            </div>
+            <%= @user.profile %>
+          </figcaption>
+        </figure>
+      </div>
+      
+      <div class='my-posts-list'>
+        <%= render partial: "posts/post" %>
+      </div>
     </div>
   </div>
 

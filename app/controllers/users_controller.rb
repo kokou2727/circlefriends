@@ -5,8 +5,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    user = User.find(params[:id])
-    @image = user.user_icon
+    @user = User.find(params[:id])
   end
 
   def update
@@ -30,6 +29,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:id, :name, :email, :user_icon, :profile)
+    params.require(:user).permit(:id, :name, :email, :image, :profile)
   end
 end

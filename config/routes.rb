@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'group_users/participate'
   root to: "posts#index"
   resources :posts, only: [:index, :create]
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :edit, :update]
   resources :relationships, only: [:create, :destroy]
   resources :group_users, only: :destroy
   resources :groups, only: [:index, :new, :create, :edit, :update, :destroy] do
