@@ -34,10 +34,10 @@
         <figure class="snip1344" style="height: 500px">
         <% if @user.image.present? %>
           <%= image_tag @user.image, class: "background" %>
-          <%= image_tag @user.image, class: "profile" %>
+          <%= image_tag @user.image, class: "user-profile" %>
         <% else %>
           <%= image_tag "profile.png", class:"background" %>
-          <%= image_tag "profile.png", class:"profile"  %>
+          <%= image_tag "profile.png", class:"user-profile"  %>
         <% end %>
           <figcaption>
             <h3><%= @user.name %><span><%= @user.job %></span></h3>

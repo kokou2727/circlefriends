@@ -9,13 +9,13 @@
           <% if @user.image.present? %>
             <%= image_tag @user.image, class: "background" %>
             <label>
-              <%= image_tag @user.image, class: "profile" %>
+              <%= image_tag @user.image, class: "user-profile" %>
               <%= f.file_field :image, class:"hidden" %>
             </label>
           <% else %>
             <%= image_tag "profile.png", class:"background" %>
             <label>
-              <%= image_tag "profile.png", class:"profile"  %>
+              <%= image_tag "profile.png", class:"user-profile"  %>
               <%= f.file_field :image, class:"hidden" %>
             </label>
           <% end %>
