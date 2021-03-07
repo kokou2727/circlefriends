@@ -26,6 +26,10 @@
   font-weight: bold;
 }
 
+.list-right a:visited, a:link, a:active, a:hover {
+  color: black;
+}
+
 .login {
   padding: 5px, 10px;
   margin-right: 10px;
@@ -66,7 +70,7 @@
   margin-right: 20px;
 }
 
-.home-list a {
+.home a:visited, a:link, a:active, a:hover {
   color: black;
 }
 
@@ -81,6 +85,10 @@
   margin-right: 20px;
 }
 
+.circle a:visited, a:link, a:active, a:hover {
+  color: black;
+}
+
 .profile {
   padding: 5px 10px;
   display: flex;
@@ -91,6 +99,11 @@
   width: 35px;
   margin-right: 20px;
 }
+
+.profile a:visited, a:link, a:active, a:hover {
+  color: black;
+}
+
 .side-footer {
   height: 10vh;
 }

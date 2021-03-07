@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  get '/post/hashtag/:name', to: "posts#hashtag"
   get 'posts/index'
   get 'users/add_user_to_group'
   get 'group_users/participate'
