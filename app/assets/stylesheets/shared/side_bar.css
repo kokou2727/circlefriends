@@ -58,9 +58,15 @@
 }
 
 .home {
-  padding: 5px 10px;
+  padding: 10px;
   display: flex;
   align-items: center;
+  width: 150px;
+  border-radius: 50px;
+}
+
+.home:hover {
+  background-color: rgb(244, 212, 153);
 }
 
 .home-icon {
@@ -69,9 +75,11 @@
 }
 
 .circle {
-  padding: 5px 10px;
+  padding: 10px;
   display: flex;
   align-items: center;
+  width: 170px;
+  border-radius: 50px;
 }
 
 .circle-icon {
@@ -79,16 +87,28 @@
   margin-right: 20px;
 }
 
+.circle:hover {
+  background-color: rgb(244, 212, 153);
+}
+
+
 .profile {
-  padding: 5px 10px;
+  padding: 10px;
   display: flex;
   align-items: center;
+  width: 200px;
+  border-radius: 50px;
 }
 
 .profile-icon {
   width: 35px;
   margin-right: 20px;
 }
+
+.profile:hover {
+  background-color: rgb(244, 212, 153);
+}
+
 
 .side-footer {
   height: 10vh;

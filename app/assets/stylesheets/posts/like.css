@@ -1,3 +1,14 @@
+.like-unlike {
+  display: flex;
+  align-items: center;
+  width: 30px;
+  margin-right: 0px;
+}
+
+.like-unlike:hover {
+  color: #dd5a5a;
+}
+
 .like-btn {
   font-size: 15px;
   color: #808080;
@@ -6,4 +17,32 @@
 .unlike-btn {
   font-size: 15px;
   color: #e54747;
+}
+
+.like-btn-area {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.unlike-btn-area {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.like-btn-area:hover {
+  text-decoration: none;
+  background-color: rgba(224, 36, 94, 0.1);
+  color: #dd5a5a;
+}
+
+.unlike-btn-area:hover {
+  text-decoration: none;
+  background-color: rgba(224, 36, 94, 0.1);
+  color: #dd5a5a;
 }

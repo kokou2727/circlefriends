@@ -17,16 +17,16 @@
     <ul class='side-list'>
       <div class='home'>
         <%= link_to image_tag("home.png", class:"home-icon"), root_path %>
-        <li><%= link_to 'ホーム', root_path, class: "home-list" %></li>
+        <li><%= link_to 'ホーム', root_path, class: "home-list", style:'text-decoration: none'%></li>
       </div>
       <div class='circle'>
       <%= link_to image_tag("circle.png", class:"circle-icon"), groups_path %>
-        <li><%= link_to 'サークル', groups_path, class: "circle-list" %></li>
+        <li><%= link_to 'サークル', groups_path, class: "circle-list", style:'text-decoration: none'%></li>
       </div>
       <% if user_signed_in? %>
         <div class='profile'>
         <%= link_to image_tag("profile.png", class:"profile-icon"), user_path(current_user) %>
-          <li><%= link_to 'プロフィール', user_path(current_user), class: "profile-list" %></li>
+          <li><%= link_to 'プロフィール', user_path(current_user), class: "profile-list", style:'text-decoration: none' %></li>
         </div>
       <% end %>
     </ul>
