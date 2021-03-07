@@ -55,8 +55,31 @@
                   <% end %>
                 <% end %>
               <% end %>
-              <a href="#"> <i class="ion-social-twitter-outline"></i></a>
-              <a href="#"> <i class="ion-social-vimeo-outline"></i></a>
+              <% if @user.twitter.present? %>
+                <%= link_to @user.twitter, target: :_blank do %>
+                  <i class="fab fa-twitter" style='width: 30px; height: 30px'></i>
+                <% end %>
+              <% end %>
+              <% if @user.instagram.present? %>
+                <%= link_to @user.instagram, target: :_blank do %>
+                  <i class="fab fa-instagram" style='width: 30px; height: 30px'></i>
+                <% end %>
+              <% end %>
+              <% if @user.youtube.present? %>
+                <%= link_to @user.youtube, target: :_blank do %>
+                  <i class="fab fa-youtube" style='width: 30px; height: 30px'></i>
+                <% end %>
+              <% end %>
+              <% if @user.facebook.present? %>
+                <%= link_to @user.facebook, target: :_blank do %>
+                  <i class="fab fa-facebook-square" style='width: 30px; height: 30px'></i>
+                <% end %>
+              <% end %>
+              <% if @user.line.present? %>
+                <%= link_to @user.line, target: :_blank do %>
+                  <i class="fab fa-line" style='width: 30px; height: 30px'></i>
+                <% end %>
+              <% end %>
             </div>
             <%= @user.profile %>
           </figcaption>
