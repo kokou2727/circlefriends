@@ -108,6 +108,11 @@ ActiveRecord::Schema.define(version: 2021_03_05_093952) do
     t.string "name", null: false
     t.string "job"
     t.text "profile"
+    t.string "twitter"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "youtube"
+    t.string "line"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

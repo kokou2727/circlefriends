@@ -9,6 +9,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :name, null: false
       t.string :job
       t.text   :profile
+      t.string :twitter
+      t.string :facebook
+      t.string :instagram
+      t.string :youtube
+      t.string :line
 
       ## Recoverable
       t.string   :reset_password_token

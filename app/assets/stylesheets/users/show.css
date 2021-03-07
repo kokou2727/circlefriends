@@ -118,3 +118,33 @@
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
 }
+
+.fa-twitter {
+  color:#1da1f2;
+  background-color: white;
+  border-radius: 20%;
+}
+
+.fa-instagram {
+  color:#e1306c;
+  background-color: white;
+  border-radius: 20%;
+}
+
+.fa-youtube {
+  color:#ff0000;
+  background-color: white;
+  border-radius: 20%;
+}
+
+.fa-line {
+  color:#00c300;
+  background-color: white;
+  border-radius: 20%;
+}
+
+.fa-facebook-square{
+  color:#3b5998;
+  background-color: white;
+  border-radius: 20%;
+}
