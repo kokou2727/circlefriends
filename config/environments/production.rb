@@ -109,4 +109,7 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = "wss://circlefriends.herokuapp.com/cable" 
+  config.action_cable.allowed_request_origins = ['https://circlefriends.herokuapp.com', 'http://circlefriends.herokuapp.com']
 end
