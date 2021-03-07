@@ -19,12 +19,19 @@
   font-family: 'Vollkorn', serif;
 }
 
+.post-user a:visited, a:link, a:active, a:hover {
+  color: black;
+}
+
 .post-job {
   color: #434a54;
   font-size: 15px;
-  color: #f39c12;
   opacity: 0.75;
   margin: 10px 5px 10px 10px;
+}
+
+.post-job a:visited, a:link, a:active, a:hover {
+  color: #f39c12;
 }
 
 .nakaten {
@@ -52,6 +59,10 @@
   font-family: 'Noto Sans JP', sans-serif;
   word-break: break-all;
   white-space: pre-wrap;
+}
+
+.post-content  a:visited, a:link, a:active, a:hover {
+  color: rgba(0, 204, 255, 0.992);
 }
 
 .post-icon-area {
