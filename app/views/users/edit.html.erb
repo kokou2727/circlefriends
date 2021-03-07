@@ -4,7 +4,7 @@
   </div>
   <div class='user-edit'>
       <div class='profile-area' style="height: 100% ">
-        <div class="snip1344" style="height: 100%">
+        <div class="snip1344" style="height: 100%; overflow: scroll">
         <%= form_with model: @user, local: true do |f| %>
           <% if @user.image.present? %>
             <%= image_tag @user.image, class: "background" %>
@@ -32,6 +32,21 @@
               <div class='edit-profile-area' style='margin-bottom: 20px'>
               <h3><span>自己紹介</span></h3>
                 <%= f.text_area :profile, class: 'edit-profile', maxlength: '200'%>
+              </div>
+               <div class="form-sns">
+                <%= f.text_field :twitter, placeholder: "Twitter URL", class: "form-control" %>
+              </div>
+              <div class="form-sns">
+                <%= f.text_field :facebook, placeholder: "Facebook URL", class: "form-control" %>
+              </div>
+              <div class="form-sns">
+                <%= f.text_field :instagram, placeholder: "Instagram URL", class: "form-control" %>
+              </div>
+              <div class="form-sns">
+                <%= f.text_field :youtube, placeholder: "Youtube URL", class: "form-control" %>
+              </div>
+              <div class="form-sns">
+                <%= f.text_field :line, placeholder: "Line URL", class: "form-control" %>
               </div>
               <div>
               <%= f.submit 'OK', class: 'user-edit-btn' %>
