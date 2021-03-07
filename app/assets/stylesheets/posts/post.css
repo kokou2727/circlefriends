@@ -19,10 +19,6 @@
   font-family: 'Vollkorn', serif;
 }
 
-.post-user a:visited, a:link, a:active, a:hover {
-  color: black;
-}
-
 .post-job {
   color: #434a54;
   font-size: 15px;
@@ -30,7 +26,7 @@
   margin: 10px 5px 10px 10px;
 }
 
-.post-job a:visited, a:link, a:active, a:hover {
+.post-job a:link,.post-job a:visited,.post-job a:hover,.post-job a:active {
   color: #f39c12;
 }
 
@@ -61,8 +57,8 @@
   white-space: pre-wrap;
 }
 
-.post-content  a:visited, a:link, a:active, a:hover {
-  color: rgba(0, 204, 255, 0.992);
+.post-content a:link, .post-content a:visited, .post-content a:hover,.post-content a:active {
+  color: rgba(8, 152, 255, 0.896);
 }
 
 .post-icon-area {

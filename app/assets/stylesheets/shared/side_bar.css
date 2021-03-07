@@ -26,10 +26,6 @@
   font-weight: bold;
 }
 
-.list-right a:visited, a:link, a:active, a:hover {
-  color: black;
-}
-
 .login {
   padding: 5px, 10px;
   margin-right: 10px;
@@ -72,10 +68,6 @@
   margin-right: 20px;
 }
 
-.home a:visited, a:link, a:active, a:hover {
-  color: black;
-}
-
 .circle {
   padding: 5px 10px;
   display: flex;
@@ -87,10 +79,6 @@
   margin-right: 20px;
 }
 
-.circle a:visited, a:link, a:active, a:hover {
-  color: black;
-}
-
 .profile {
   padding: 5px 10px;
   display: flex;
@@ -100,10 +88,6 @@
 .profile-icon {
   width: 35px;
   margin-right: 20px;
-}
-
-.profile a:visited, a:link, a:active, a:hover {
-  color: black;
 }
 
 .side-footer {

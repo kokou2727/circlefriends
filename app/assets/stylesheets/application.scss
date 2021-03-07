@@ -30,3 +30,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 a {
   text-decoration: none;
 }
+
+a:link, a:visited, a:hover, a:active {
+  color: black;
+}
