@@ -18,6 +18,9 @@ class GroupsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def destroy
     group = Group.find(params[:id])
     group.destroy
