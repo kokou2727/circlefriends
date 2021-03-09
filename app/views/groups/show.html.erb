@@ -1,0 +1,19 @@
+<div id='group'>
+  <div class="videosContainer">
+    <video id="myStream" autoplay="" muted="true"></video>
+  </div>
+  <div class="myControllerContainer">
+    <p>Your id: <span id="my-id">Xzoac7xRatSg5rWZ</span></p>
+    <div id="make-call">
+        <input type="text" placeholder="Join room..." id="join-room">
+        <button type="button" onclick='callRoom()'>Join</button>
+    </div>
+    <div id="end-call">
+        <p>Currently in room <span id="room-id">...</span></p>
+        <button type="button" onclick='endRoom()'>Leave</button>
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'group' %>
+<%= stylesheet_pack_tag 'group' %>

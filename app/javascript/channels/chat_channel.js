@@ -33,6 +33,7 @@ const chatChannel = consumer.subscriptions.create("ChatChannel", {
 });
 
 $(document).on('keypress', '#message-form', function(e) {
+  e.preventDefault();
   if (e.keyCode === 13 && e.target.value !== "") {
     chatChannel.create(e.target.value);
     e.target.value = '';

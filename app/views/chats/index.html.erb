@@ -9,6 +9,7 @@
       <%= link_to "招待", users_path(current_user)%>
       <%= link_to '退出', group_user_path(@group, group_id: @group.id), method: :delete %>
       <%= link_to "削除", group_path(@group), method: :delete %>
+      <%= link_to "通話", group_path(@group) %>
     </div>
     <div class='chats-main'>
       <%= render "message" %>
