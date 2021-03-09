@@ -11,12 +11,11 @@
         <label for="videoSource">Video source: </label><select id="videoSource"></select>
     </div>
     <div id="make-call">
-        <input type="text" placeholder="Join room..." id="join-room">
-        <button type="button" onclick='callRoom()'>Join</button>
+        <p id="join-room"><%= @group.group_name %></p>
     </div>
     <div id="end-call">
-        <p>Currently in room <span id="room-id">...</span></p>
-        <button type="button" onclick='endRoom()'>Leave</button>
+        <p>Currently in room <span id="room-id"></span></p>
+        <%= link_to "leave", root_path, onclick: 'endRoom()'%>
     </div>
   </div>
 </div>

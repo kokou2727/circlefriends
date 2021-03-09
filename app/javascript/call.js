@@ -35,20 +35,17 @@ $(function(){
 
   peer.on('open', function(){
       $('#my-id').text(peer.id);
-  });
-
-  peer.on('error', function(err){
-      alert(err.message);
-  });
-
-  window.callRoom = function callRoom(){
-      let roomName = $('#join-room').val();
+      let roomName = $(gon.group_name);
       if (!roomName) {
           return;
       }
       const call = peer.joinRoom(roomName, {mode: 'sfu', stream: localStream});
       setupCallEventHandlers(call);
-  };
+  });
+
+  peer.on('error', function(err){
+      alert(err.message);
+  });
 
   window.endRoom = function endRoom(){
     existingCall.close();
@@ -96,7 +93,7 @@ $(function(){
 
       existingCall = call;
       setupEndCallUI();
-      $('#room-id').text(call.name);
+      $('#room-id').text(gon.group_name);
 
       call.on('stream', function(stream){
           addVideo(stream);
