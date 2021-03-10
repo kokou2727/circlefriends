@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update]
   resources :relationships, only: [:create, :destroy]
   resources :group_users, only: :destroy
-  resources :groups, only: [:index, :new, :create, :edit, :update, :destroy] do
+  resources :groups, only: [:index, :new, :create, :edit, :update, :destroy, :show] do
     resources :chats, only: [:index, :create, :destroy]
   end
 end

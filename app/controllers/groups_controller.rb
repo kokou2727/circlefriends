@@ -18,6 +18,11 @@ class GroupsController < ApplicationController
     end
   end
 
+  def show
+    @group = Group.find(params[:id])
+    gon.group_name = @group.group_name
+  end
+
   def destroy
     group = Group.find(params[:id])
     group.destroy

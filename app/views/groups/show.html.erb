@@ -1,0 +1,29 @@
+<div id='group'>
+  <div class="videosContainer">
+    <video id="myStream" autoplay="" muted="true"></video>
+  </div>
+  <div class="myControllerContainer">
+    <p>Your id: <span id="my-id"></span></p>
+    <div class="select">
+        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+    </div>
+    <div class="select">
+        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+    </div>
+    <div id="make-call">
+        <p id="join-room"><%= @group.group_name %></p>
+        <button type="button" onclick="roomJoin()">join</button>
+    </div>
+    <div id="end-call">
+        <p>Currently in room <span id="room-id"></span></p>
+        <%= link_to "leave", root_path, onclick: 'endRoom()'%>
+    </div>
+    <button id="mute-on" type="button" onclick="muteOn()">ミュート</button>
+    <button id="mute-off" type="button" onclick="muteOff()">ミュートoff</button>
+    <button id="video-off"type="button" onclick="videoOff()">画面off</button>
+    <button id="video-on"type="button" onclick="videoOn()">画面on</button>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'group' %>
+<%= stylesheet_pack_tag 'group' %>
