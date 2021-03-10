@@ -35,20 +35,25 @@ $(function(){
 
   peer.on('open', function(){
       $('#my-id').text(peer.id);
-      let roomName = $(gon.group_name);
-      if (!roomName) {
-          return;
-      }
-      const call = peer.joinRoom(roomName, {mode: 'sfu', stream: localStream});
-      setupCallEventHandlers(call);
+      setupMuteOnUI()
+      setupVideoOffUI()
   });
 
   peer.on('error', function(err){
       alert(err.message);
   });
 
+  window.roomJoin = function roomJoin(){
+      let roomName = (gon.group_name);
+      if (!roomName) {
+          return;
+      }
+      const call = peer.joinRoom(roomName, {mode: 'sfu', stream: localStream});
+      setupCallEventHandlers(call);
+  };
+
   window.endRoom = function endRoom(){
-    existingCall.close();
+      existingCall.close();
   };
 
   function setupGetUserMedia() {
@@ -138,4 +143,43 @@ $(function(){
       $('#end-call').show();
   }
 
+  function setupMuteOffUI() {
+    $('#mute-on').hide();
+    $('#mute-off').show();
+  }
+
+  function setupMuteOnUI() {
+    $('#mute-on').show();
+    $('#mute-off').hide();
+  }
+
+  function setupVideoOffUI() {
+    $('#video-on').hide();
+    $('#video-off').show();
+  }
+
+  function setupVideoOnUI() {
+    $('#video-on').show();
+    $('#video-off').hide();
+  }
+
+  window.muteOn = function muteOn(){
+    localStream.getAudioTracks().forEach(track => track.enabled = false);
+    setupMuteOffUI()
+  };
+
+  window.videoOff = function videoOff(){
+    localStream.getVideoTracks().forEach(track => track.enabled = false);
+    setupVideoOnUI()
+  };
+
+  window.muteOff = function muteOff(){
+    localStream.getAudioTracks().forEach(track => track.enabled = true);
+    setupMuteOnUI()
+  };
+
+  window.videoOn = function videoOn(){
+    localStream.getVideoTracks().forEach(track => track.enabled = true);
+    setupVideoOffUI()
+  };
 });
