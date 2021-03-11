@@ -12,20 +12,43 @@
 }
 
 .chats-main {
-  height: calc(100vh - 100px - 100px);
+  height: calc(100vh - 100px - 50px);
   overflow-y: scroll;
+  padding: 0 20px;
 }
 
-.new_message_form {
-  background-color: #dddddd;
-  height: 100px;
-  padding: 20px 40px;
+.chat {
   display: flex;
+  padding-bottom: 5px;
 }
+
+.chat-icon-area {
+  height: 100%;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.chat-message {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: rgb(255, 200, 0);
+}
+
 .chat-right  {
-  float: right;
+  display: inline-block;
+  margin: 0 0 0 auto;
 }
 
 .chat-left {
-  float: left;
+  display: inline-block;
+}
+
+.chat-form {
+  height: 50px;
+  display: flex;
+  border-top: solid 1px #c3c3c3;
+}
+
+.message-form {
+  -webkit-user-select : auto;
 }
