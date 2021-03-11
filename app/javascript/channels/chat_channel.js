@@ -17,9 +17,9 @@ const chatChannel = consumer.subscriptions.create("ChatChannel", {
       <div class='chat'>
       <div class='chat-right'>
         <div style='display: flex'>
-          <div>
+          <div style='padding-top: 15px'>
             <span class="date">
-              
+            ${data['chat_date']}
             </span>
           </div>
           <div class='chat-message' style='border-radius: 16px 0 16px 16px'>
@@ -48,9 +48,9 @@ const chatChannel = consumer.subscriptions.create("ChatChannel", {
                   ${data['message']}
                 </span>
               </div>
-              <div>
+              <div style='padding-top: 15px'>
                 <span class="date">
-                
+                ${data['chat_date']}
                 </span>
               </div>
             </div>

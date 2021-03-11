@@ -31,7 +31,12 @@
 .chat-message {
   display: inline-block;
   padding: 5px 15px;
+  text-align: center;
   background-color: rgb(255, 200, 0);
+}
+
+.chat-message-content{
+  vertical-align: middle;
 }
 
 .chat-right  {
