@@ -12,12 +12,15 @@
       <%= link_to "通話", group_path(@group) %>
     </div>
     <div class='chats-main'>
+      <div class='chat-group'>
+        <p class='chat-group-introduction'><%= @group.group_name %>のチャットルームです</p>
+      </div>
       <%= render "message" %>
     </div>
     <div class='chat-form'>
       <form>
-        <h1 id="user_group" data-group_id="<%= @group.id %>" data-user_id="<%= current_user.id %>"></h1>
-        <input class='message-form' type="text" id="message-form" placeholder="new message">
+        <input type="hidden" id="user_group" data-group_id="<%= @group.id %>" data-user_id="<%= current_user.id %>">
+        <textarea class='message-input-area' id="message-form" placeholder="new message" rows="2" wrap="soft"></textarea>
       </form>
     </div>
   </div>

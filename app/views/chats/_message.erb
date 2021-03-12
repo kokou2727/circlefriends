@@ -4,15 +4,15 @@
       <% if chat.user_id == current_user.id%>
         <div class='chat'>
           <div class='chat-right'>
-            <div style='display: flex'>
-              <div style='padding-top: 15px'>
+            <div style='display: flex; align-items: flex-end'>
+              <div class='date-area'>
                 <span class="date"> 
                   <%= chat.created_at.strftime("%p %I:%M")%>
                 </span>
               </div>
               <div class='chat-message' style='border-radius: 16px 0 16px 16px'>
-                <span class='chat-message-content'>
-                  <%= chat.message %>
+                <span class='message-content'>
+                  <%= simple_format(chat.message) %>
                 </span>
               </div>
             </div>
@@ -32,22 +32,20 @@
               <%= chat.user.name %>
             </span>
             </br>
-            <div style='display: flex'>
+            <div style='display: flex; align-items: flex-end'>
               <div class='chat-message' style='border-radius: 0 16px 16px 16px; background-color: rgb(255, 255, 255);'>
-                <span class='chat-message-content'>
-                  <%= chat.message %>
+                <span class='message-content'>
+                  <%= simple_format(chat.message) %>
                 </span>
               </div>
-              <div style='padding-top: 15px'>
-                <span class="date">
-                  <%= chat.created_at.strftime("%p %I:%M") %>
-                </span>
-              </div>
+              <span class="date">
+                <%= chat.created_at.strftime("%p %I:%M") %>
+              </span>
             </div>
           </div>
         </div>
       <% end %>
     <% end %>
-    <p id="new-message"></p>
+    <div id="new-message"></div>
   </div>
 </div>
