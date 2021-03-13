@@ -5,11 +5,23 @@
 
   <div class='chats'>
     <div class='chats-header'>
-      <%= @group.group_name %>
-      <%= link_to "招待", users_path(current_user)%>
-      <%= link_to '退出', group_user_path(@group, group_id: @group.id), method: :delete %>
-      <%= link_to "削除", group_path(@group), method: :delete %>
-      <%= link_to "通話", group_path(@group) %>
+      <div class="group-name">
+        <%= @group.group_name %>
+      </div>
+      <div class="group-actions">
+        <%= link_to users_path(current_user) do %>
+          <i class="far fa-handshake group-action-icon"></i>
+        <% end %>
+        <%= link_to group_user_path(@group, group_id: @group.id), method: :delete do %>
+          <i class="fas fa-sign-out-alt group-action-icon"></i>
+        <% end %>
+        <%= link_to group_path(@group), method: :delete do %>
+          <i class="fas fa-heart-broken group-action-icon"></i>
+        <% end %>
+        <%= link_to group_path(@group) do %>
+          <i class="fas fa-phone-alt group-action-icon"></i>
+        <% end %>
+      </div>
     </div>
     <div class='chats-main'>
       <div class='chat-group'>
@@ -18,10 +30,15 @@
       <%= render "message" %>
     </div>
     <div class='chat-form'>
-      <form>
-        <input type="hidden" id="user_group" data-group_id="<%= @group.id %>" data-user_id="<%= current_user.id %>">
-        <textarea class='message-input-area' id="message-form" placeholder="new message" rows="2" wrap="soft"></textarea>
-      </form>
+        <form style="display: flex; align-items: center">
+          <input type="hidden" id="user_group" data-group_id="<%= @group.id %>" data-user_id="<%= current_user.id %>">
+          <div style="margin-right: 20px">
+            <textarea class='message-input-area' id="message-form" placeholder="new message" wrap="soft"></textarea>
+          </div>
+          <div class="message-send-icon-area"id="message-send">
+            <i class="far fa-paper-plane group-action-icon"></i>
+          </div>
+        </form>
     </div>
   </div>
 

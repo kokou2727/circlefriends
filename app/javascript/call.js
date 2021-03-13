@@ -1,5 +1,3 @@
-$(document).on('turbolinks:load', function() {
-
   let localStream = null;
   let peer = null;
   let existingCall = null;
@@ -182,4 +180,3 @@ $(document).on('turbolinks:load', function() {
     localStream.getVideoTracks().forEach(track => track.enabled = true);
     setupVideoOffUI()
   };
-});

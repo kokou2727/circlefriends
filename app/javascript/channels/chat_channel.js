@@ -14,18 +14,17 @@ $(document).on('turbolinks:load', function() {
 
       received(data) {
         if (data['user_id'] == $('#user_group').data('user_id')) {
+          let message = data['message'].replace(/\n|\r\n|\r/g, '<br>');
           let chat_content = `
           <div class='chat'>
           <div class='chat-right'>
-            <div style='display: flex'>
-              <div style='padding-top: 15px'>
+            <div style='display: flex;  align-items: flex-end'>
                 <span class="date">
                 ${data['chat_date']}
                 </span>
-              </div>
               <div class='chat-message' style='border-radius: 16px 0 16px 16px'>
                 <span class='message-content'>
-                  <p>${data['message']}</p>
+                  <p>${message}</p>
                 </span>
               </div>
             </div>
@@ -43,17 +42,15 @@ $(document).on('turbolinks:load', function() {
                   ${data['user_name']}
                 </span>
                 </br>
-                <div style='display: flex'>
+                <div style='display: flex; align-items: flex-end'>
                   <div class='chat-message' style='border-radius: 0 16px 16px 16px; background-color: rgb(255, 255, 255);'>
                     <span class='message-content'>
-                      <p>${data['message']}</p>
+                      <p>${message}</p>
                     </span>
                   </div>
-                  <div style='padding-top: 15px'>
                     <span class="date">
                     ${data['chat_date']}
                     </span>
-                  </div>
                 </div>
               </div>
             </div>`
@@ -76,16 +73,20 @@ $(document).on('turbolinks:load', function() {
     });
 
     $(document).on('keypress', '#message-form', function(e) {
-      if ( e.keyCode === 13 && (e.shiftKey === true || e.ctrlKey === true || e.altKey === true || e.optionKey === true || e.commandKey === true ) ) {
-        e.target.value = e.target.value + "\n";
-        return false;
-      }
-      if (e.keyCode === 13 && e.target.value !== "") {
-        e.target.value = e.target.value.replace(/\n|\r\n|\r/g, '<br>');
+        if ( e.keyCode === 13 && (e.shiftKey === true || e.ctrlKey === true || e.altKey === true || e.optionKey === true || e.commandKey === true ) ) {
+          e.target.value = e.target.value + "\n";
+          return false
+        }
+        if (e.keyCode === 13 && e.target.value !== "" ) {
         chatChannel.create(e.target.value);
         e.target.value = '';
         e.preventDefault();
       }
+      $('#message-send').on('click',function() {
+        chatChannel.create(e.target.value);
+        e.target.value = '';
+        e.preventDefault();
+      });
     })
   }
 });
