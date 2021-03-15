@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
     $('.group').change(function() {
       $.ajax({
         url: "/users/add_user_to_group",

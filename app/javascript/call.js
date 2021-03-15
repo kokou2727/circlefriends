@@ -1,5 +1,3 @@
-$(function(){
-
   let localStream = null;
   let peer = null;
   let existingCall = null;
@@ -182,4 +180,3 @@ $(function(){
     localStream.getVideoTracks().forEach(track => track.enabled = true);
     setupVideoOffUI()
   };
-});

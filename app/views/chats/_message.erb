@@ -1,16 +1,51 @@
 <div class='chat-content'  id='chat_list'>
   <div class="chats_list" >
     <% @chats.each do |chat| %>
-      <p>
-        <%= chat.user.name %>
-        <span class="date">
-          <%= time_ago_in_words(chat.created_at) %>前
-        </span>
-        <div class='chat-message'>
-          <%= chat.message %>
+      <% if chat.user_id == current_user.id%>
+        <div class='chat'>
+          <div class='chat-right'>
+            <div style='display: flex; align-items: flex-end'>
+              <div class='date-area'>
+                <span class="date"> 
+                  <%= chat.created_at.strftime("%p %I:%M")%>
+                </span>
+              </div>
+              <div class='chat-message' style='border-radius: 16px 0 16px 16px'>
+                <span class='message-content'>
+                  <%= simple_format(chat.message) %>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-      </p>
+      <% else %>
+        <div class='chat'>
+          <div class='chat-icon-area'>
+            <% if chat.user.image.present? %>
+              <%= link_to image_tag(chat.user.image, class:"post-icon"), user_path(chat.user_id) %>
+            <% else %>
+              <%= link_to image_tag("profile.png", class:"post-icon"), user_path(chat.user_id) %>
+            <% end %>
+          </div>
+          <div class='chat-left'>
+            <span class="chat-user-name">
+              <%= chat.user.name %>
+            </span>
+            </br>
+            <div style='display: flex; align-items: flex-end'>
+              <div class='chat-message' style='border-radius: 0 16px 16px 16px; background-color: rgb(255, 255, 255);'>
+                <span class='message-content'>
+                  <%= simple_format(chat.message) %>
+                </span>
+              </div>
+              <span class="date">
+                <%= chat.created_at.strftime("%p %I:%M") %>
+              </span>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-    <p id="new-message"></p>
+    <div id="new-message"></div>
   </div>
 </div>

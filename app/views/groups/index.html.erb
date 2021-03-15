@@ -8,7 +8,7 @@
     </div>
     <% current_user.groups.each do |group| %>
     <div class="group-infomation">
-      <div class="group-name">
+      <div class="group-name-list">
         <%= link_to group.group_name, group_chats_path(group) %>
       </div>
       <% unless GroupUser.find_by(user_id: current_user.id, group_id: group.id).permit %>
