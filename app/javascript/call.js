@@ -63,11 +63,11 @@
       };
       constraints.video.width = {
           min: 320,
-          max: 320
+          // max: 320
       };
       constraints.video.height = {
           min: 240,
-          max: 240        
+          // max: 240
       };
 
       if(localStream){
