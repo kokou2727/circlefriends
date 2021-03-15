@@ -27,7 +27,7 @@
       });
 
   peer = new Peer({
-      key: process.env.SKYWAY_API_KEY,
+      key: process.env["SKYWAY_API_KEY"],
       debug: 3
   });
 
