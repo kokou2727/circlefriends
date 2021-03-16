@@ -13,8 +13,8 @@ $(document).on('turbolinks:load', function() {
       },
 
       received(data) {
+        let message = data['message'].replace(/\n|\r\n|\r/g, '<br>');
         if (data['user_id'] == $('#user_group').data('user_id')) {
-          let message = data['message'].replace(/\n|\r\n|\r/g, '<br>');
           let chat_content = `
           <div class='chat'>
           <div class='chat-right'>
