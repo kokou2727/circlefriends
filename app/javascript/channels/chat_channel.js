@@ -2,8 +2,7 @@ import consumer from "./consumer"
 $(document).on('turbolinks:load', function() {
   if(document.URL.match(/chats/)){
     $(".chats-main").scrollTop($('.chats-main')[0].scrollHeight);
-  }
-});
+
     const chatChannel = consumer.subscriptions.create("ChatChannel", {
       connected() {
         // Called when the subscription is ready for use on the server
@@ -89,3 +88,5 @@ $(document).on('turbolinks:load', function() {
         e.preventDefault();
       });
     })
+  }
+});
