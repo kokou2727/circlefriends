@@ -114,6 +114,6 @@ Rails.application.configure do
   config.action_cable.allowed_request_origins = ['https://circlefriends.herokuapp.com', 'http://circlefriends.herokuapp.com']
 
   ActionCable.server.config.disable_request_forgery_protection = true
-  config.action_cable.url = "ws://35.73.37.200/cable" 
-  config.action_cable.allowed_request_origins = ['http://35.73.37.200']
+  config.action_cable.url = "ws://newcirclefriends.com/cable" 
+  config.action_cable.allowed_request_origins = ['https://newcirclefriends.com']
 end
