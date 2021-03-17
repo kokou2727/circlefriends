@@ -1,3 +1,4 @@
+$(function(){
   let localStream = null;
   let peer = null;
   let existingCall = null;
@@ -155,6 +156,7 @@
     $('#mute-off').hide();
   }
 
+
   function setupVideoOffUI() {
     $('#video-on').hide();
     $('#video-off').show();
@@ -184,3 +186,4 @@
     localStream.getVideoTracks().forEach(track => track.enabled = true);
     setupVideoOffUI()
   };
+});
