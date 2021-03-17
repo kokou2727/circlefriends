@@ -1,8 +1,7 @@
 import consumer from "./consumer"
-$(document).on('turbolinks:load', function() {
+$(function() {
   if(document.URL.match(/chats/)){
     $(".chats-main").scrollTop($('.chats-main')[0].scrollHeight);
-
     const chatChannel = consumer.subscriptions.create("ChatChannel", {
       connected() {
         // Called when the subscription is ready for use on the server
@@ -13,6 +12,7 @@ $(document).on('turbolinks:load', function() {
       },
 
       received(data) {
+      if (data["group_id"] == $('#user_group').data('group_id')) {
         let message = data['message'].replace(/\n|\r\n|\r/g, '<br>');
         if (data['user_id'] == $('#user_group').data('user_id')) {
           let chat_content = `
@@ -57,6 +57,10 @@ $(document).on('turbolinks:load', function() {
             $('#new-message').append(chat_content);
         }
         $('.chats-main').animate({ scrollTop: $('.chats-main')[0].scrollHeight});
+      }
+      else {
+        return false
+      }
       },
 
       speak: function() {
