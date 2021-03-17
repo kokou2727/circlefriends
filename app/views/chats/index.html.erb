@@ -18,7 +18,7 @@
         <%= link_to group_path(@group), method: :delete do %>
           <i class="fas fa-heart-broken group-action-icon"></i>
         <% end %>
-        <%= link_to group_path(@group) do %>
+        <%= link_to group_path(@group), data: {"turbolinks" => false} do %>
           <i class="fas fa-phone-alt group-action-icon"></i>
         <% end %>
       </div>

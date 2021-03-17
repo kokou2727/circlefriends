@@ -58,8 +58,12 @@
       let audioId = $('#audioSource').val();
       let videoId = $('#videoSource').val();
       let constraints = {
-          audio: audioId,
-          video: videoId
+        audio: {
+            deviceId: audioId
+           },
+        video: { 
+            deviceId: videoId
+           }
       };
       constraints.video.width = {
           min: 320,
