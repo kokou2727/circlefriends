@@ -19,9 +19,11 @@ $(function() {
           <div class='chat'>
           <div class='chat-right'>
             <div style='display: flex;  align-items: flex-end'>
-                <span class="date">
+              <div class='date-area'>
+                <span class="chat-date">
                 ${data['chat_date']}
                 </span>
+              </div>
               <div class='chat-message' style='border-radius: 16px 0 16px 16px'>
                 <span class='message-content'>
                   <p>${message}</p>
@@ -43,14 +45,16 @@ $(function() {
                 </span>
                 </br>
                 <div style='display: flex; align-items: flex-end'>
-                  <div class='chat-message' style='border-radius: 0 16px 16px 16px; background-color: rgb(255, 255, 255);'>
+                  <div class='chat-message' style='border-radius: 0 16px 16px 16px; background-color: rgb(255, 255, 255); border: solid 1px rgba(255, 255, 255, 0.5);'>
                     <span class='message-content'>
                       <p>${message}</p>
                     </span>
                   </div>
-                    <span class="date">
+                  <div class='date-area'>
+                    <span class="chat-date">
                     ${data['chat_date']}
                     </span>
+                  </div>
                 </div>
               </div>
             </div>`
