@@ -12,9 +12,11 @@
         <div class="post-user">
           <%= link_to "#{post.user.name}", user_path(post.user_id) %>
         </div>
-        <div class="post-job">
-          <%= link_to "#{post.user.job}", '#' %>
-        </div>
+        <% if post.user.job.present? %>
+          <div class="post-job">
+            <%= link_to "#{post.user.job}", '#' %>
+          </div>
+        <% end %>
         <span class='nakaten'>・</span>
         <div class="date">
           <%= time_ago_in_words(post.created_at) %>前

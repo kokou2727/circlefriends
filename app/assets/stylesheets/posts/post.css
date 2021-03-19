@@ -15,7 +15,7 @@
 
 .post-user {
   color: #434a54;
-  font-size: 25px;
+  font-size: 23px;
   font-family: 'Vollkorn', serif;
 }
 
@@ -23,7 +23,7 @@
   color: #434a54;
   font-size: 15px;
   opacity: 0.75;
-  margin: 10px 5px 10px 10px;
+  margin: 10px 0 10px 10px;
 }
 
 .post-job a:link,.post-job a:visited,.post-job a:hover,.post-job a:active {
@@ -33,25 +33,30 @@
 .nakaten {
   color: #999;
   font-size: 12px;
+  margin: 0 5px;
 }
 
 .date {
   color: #999;
   font-size: 12px;
-  margin: 0 5px;
 }
 
 .middle-post {
   
 }
 
+.under-post {
+  height: 30px;
+  margin-top: 15px;
+}
+
 .post-content-area {
-  padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .post-content {
   color: #434a54;
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Noto Sans JP', sans-serif;
   word-break: break-all;
   white-space: pre-wrap;
@@ -63,15 +68,18 @@
 
 .post-icon-area {
   height: 100%;
-  width: 40px;
+  width: 50px;
   margin-right: 10px;
 }
 
 .post-icon {
-  width: 40px;
-  margin-top: 5px;
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
   object-fit: cover;
 	border-radius:50%;
+  border: solid 1px rgba(255, 255, 255, 0.5);
 }
 
 .image {
@@ -81,7 +89,4 @@
   width: 90%;
   height: auto;
   border-radius: 10%;
-}
-.under-post {
-  height: 30px;
 }
