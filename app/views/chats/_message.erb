@@ -38,9 +38,11 @@
                   <%= simple_format(chat.message) %>
                 </span>
               </div>
-              <span class="chat-date">
-                <%= chat.created_at.strftime("%p %I:%M") %>
-              </span>
+              <div class='date-area'>
+                <span class="chat-date">
+                  <%= chat.created_at.strftime("%p %I:%M") %>
+                </span>
+              </div>
             </div>
           </div>
         </div>
