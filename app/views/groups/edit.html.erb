@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class='side-bar'>
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class='user-edit'>
+      <div class='profile-area' style="height: 100% ">
+        <div class="snip1344" style="height: 100%">
+        <h1>サークル編集</h1>
+        <%=form_with model: @group, local: true do |f|%>
+          <label>
+            <% if @group.image.present? %>
+              <%= image_tag @group.image, class: "background background-image" %>
+                <%= image_tag @group.image, class: "user-profile user-profile-image" %>
+            <% else %>
+              <%= image_tag "profile.png", class:"background background-image" %>
+                <%= image_tag "profile.png", class:"user-profile user-profile-image"  %>
+            <% end %>
+            <%= f.file_field :image, class:"hidden hidden_file" %>
+          </label>
+
+          <figcaption>
+            <div class='user-information-edit'>
+              <div class='edit-name-area' style='margin-bottom: 20px'>
+                <h3><span>サークル名</span></h3>
+                <%= f.text_field :group_name, class: 'group_name group-form__input', placeholder: 'サークル名を入力してください'%>
+              </div>
+              <div class='group-form__field'>
+                <div class='group-form__field--left'>
+                  <label class='group-form__label' for='group_チャットメンバー'>チャットメンバー</label>
+                </div>
+                <div class='group-form__field--right'>
+                  <select name="group[user_ids[]">
+                    <option value="">チャットするユーザーを選択してください</option>
+                    <% current_user.followings.each do |user| %>
+                      <option value=<%= user.id %>><%= user.name %></option>
+                    <% end %>
+                  </select>
+                  <input name="group[user_ids][]" type="hidden" value=<%= current_user.id %>>
+                </div>
+              </div>
+              <div>
+                <%= f.submit 'OK', class: '' %>
+              </div>
+            </div>
+          </figcaption>
+        <% end %>
+        </div>
+      </div>
+  </div>
+  <div class='left-bar'>
+    <%= render "shared/left_bar" %>
+  <div>
+</div>
