@@ -3,19 +3,26 @@
   align-items: center;
   width: 30px;
   margin-right: 0px;
+  font-size: 18px;
 }
 
-.like-unlike:hover {
+.like {
+  color: #808080;
+  display: flex;
+}
+
+.unlike {
+  display: flex;
   color: #dd5a5a;
 }
 
 .like-btn {
-  font-size: 15px;
+  /* font-size: 15px; */
   color: #808080;
 }
  
 .unlike-btn {
-  font-size: 15px;
+  /* font-size: 15px; */
   color: #e54747;
 }
 

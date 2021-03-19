@@ -5,56 +5,38 @@
 
   <div class='my-page'>
     <div class='my-page-header'>
-      <%= link_to image_tag("back_button.png", class:"back-icon"), root_path %>
+      <%= link_to root_path do %>
+        <div class="back-btn-area">
+          <i class="fas fa-arrow-left back-icon"></i>
+        </div>
+      <% end %>
       <h2 class='my-page-name'>
         <%= @user.name %>
       </h2>
-      <% unless current_user == @user %>
-        <% if current_user.following?(@user) %>
-          <%= form_for(current_user.relationships.find_by(follow_id: @user.id), html: { method: :delete }) do |f| %>
-            <%= hidden_field_tag :follow_id, @user.id %>
-            <%= f.submit 'Unfollow', class: 'unfollw-button' %>
-          <% end %>
-        <% else %>
-          <%= form_for(current_user.relationships.build) do |f| %>
-            <%= hidden_field_tag :follow_id, @user.id %>
-            <%= f.submit 'Follow', class: 'follw-button' %>
-          <% end %>
+      <% if current_user.id == @user.id %>
+        <div style="margin: 0 0 0 auto">
+        <%= link_to edit_user_path(@user), style:"text-decoration: none" do %>
+          <div class="profile-edit-path-area">
+            <span class="profile-edit-path">プロフィールを編集</span>
+          </div>
         <% end %>
+        </div>
       <% end %>
-      <div class='follow-follower'>
-        <span class='follow'><%= link_to "フォロー#{@user.followings.count}", "#" %></span>
-        <span class='follower'><%= link_to "フォロワー#{@user.followers.count}", "#" %></span>
-      </div>
-      <%= link_to '編集', edit_user_path(@user)%>
     </div>
 
     <div class='show-main'>
       <div class='profile-area'>
         <figure class="snip1344" style="height: 500px">
-        <% if @user.image.present? %>
-          <%= image_tag @user.image, class: "background" %>
-          <%= image_tag @user.image, class: "user-profile" %>
-        <% else %>
-          <%= image_tag "profile.png", class:"background" %>
-          <%= image_tag "profile.png", class:"user-profile"  %>
-        <% end %>
+          <% if @user.image.present? %>
+            <%= image_tag @user.image, class: "background" %>
+            <%= image_tag @user.image, class: "user-profile" %>
+          <% else %>
+            <%= image_tag "profile.png", class:"background" %>
+            <%= image_tag "profile.png", class:"user-profile"  %>
+          <% end %>
           <figcaption>
-            <h3><%= @user.name %><span><%= @user.job %></span></h3>
-            <div class="icons">
-              <% unless current_user == @user %>
-                <% if current_user.following?(@user) %>
-                  <%= form_for(current_user.relationships.find_by(follow_id: @user.id), html: { method: :delete }) do |f| %>
-                    <%= hidden_field_tag :follow_id, @user.id %>
-                    <%= f.submit 'Unfollow', class: 'unfollw-button' %>
-                  <% end %>
-                <% else %>
-                  <%= form_for(current_user.relationships.build) do |f| %>
-                    <%= hidden_field_tag :follow_id, @user.id %>
-                    <%= f.submit 'Follow', class: 'follw-button' %>
-                  <% end %>
-                <% end %>
-              <% end %>
+            <h3><%= @user.name %><span class="profile-job"><%= @user.job %></span></h3>
+            <div class="sns-icons">
               <% if @user.twitter.present? %>
                 <%= link_to @user.twitter, target: :_blank do %>
                   <i class="fab fa-twitter" style='width: 30px; height: 30px'></i>
@@ -81,8 +63,31 @@
                 <% end %>
               <% end %>
             </div>
-            <%= @user.profile %>
-          </figcaption>
+            <div class="profile-message">
+              <%= @user.profile %>
+            </div>
+            <% unless current_user == @user %>
+              <% if current_user.following?(@user) %>
+                <%= form_for(current_user.relationships.find_by(follow_id: @user.id), html: { method: :delete }) do |f| %>
+                  <%= hidden_field_tag :follow_id, @user.id %>
+                  <%= f.submit 'Unfollow', class: 'unfollw-button' %>
+                <% end %>
+              <% else %>
+                <%= form_for(current_user.relationships.build) do |f| %>
+                  <%= hidden_field_tag :follow_id, @user.id %>
+                  <%= f.submit 'Follow', class: 'follw-button' %>
+                <% end %>
+              <% end %>
+            <% end %>
+            <div class='follow-follower'>
+              <%= link_to "#", class:"follow-link" do %>
+                <span class='follow-count'><%= "#{@user.followings.count}" %></span><span class="follow">フォロー中<span>
+              <% end %>
+              <%= link_to "#" do %>
+                <span class='follower-count'><%= "#{@user.followers.count}" %></span><span class="follower">フォロワー<span>
+              <% end %>
+            </div>
+            </figcaption>
         </figure>
       </div>
       

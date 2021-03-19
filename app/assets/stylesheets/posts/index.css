@@ -15,62 +15,83 @@
 .left-bar {
   height: 100vh;
   width: calc(100vw - 610px - 350px );
+  background-color: rgb(219, 205, 187);
 }
 .post-header {
-  height: 100px;
-  padding: 0 40px;
-  display: flex;
-  justify-content: space-between;
+  height: 150px;
   border-bottom: solid 1px #c3c3c3;
 }
 
 .post-main {
-  height: calc(100vh - 100px - 100px);
+  height: calc(100vh - 150px);
   overflow-y: scroll;
 }
 
+.page-title {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 550;
+}
+
 .form {
-  background-color: #f1dbdb;
+  border-top: solid 1px #c3c3c3;
+  background-color:  #fef8f3ce;
   height: 100px;
   display: flex;
+  padding: 8px;
 }
 
 .form-input {
-  background-color: white;
   width: 100%;
   display: flex;
+  justify-content: center;
 }
 
-.form-text{
-  height: auto;
-  width: auto;
-  padding-left: 10px;
+.form-textarea{
+  border: solid 2px #c3c3c3;
+  padding: 15px;
   width: 100%;
-  border: none;
   word-break: break-all;
+  height: 100%;
+  border-radius: 16px;
+  font-size: 15px;
+  resize: none;
+  outline: none;
+}
+
+.form-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px;
 }
 
 .form-send{
-  background-color: #38aef0;
+  background-color: rgb(219, 205, 187);
+  border: solid 2px rgba(219, 205, 187, 0.855);
   padding: 0 20px;
-  margin-left: 15px;
-  height: 50px;
+  height: 40px;
+  width: 120px;
   font-size: 16px;
   color: white;
   border: none;
+  border-radius: 16px;
+  
 }
 
 .form-image {
-  width: 60px;
-  margin: 5px 10px;
+  width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .image-icon{
-  width: 30px;
-  height: auto;
+  font-size: 30px;
 }
 
 .hidden{

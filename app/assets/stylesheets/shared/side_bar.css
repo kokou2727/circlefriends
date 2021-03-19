@@ -9,13 +9,8 @@
   justify-content: space-between;
 }
 
-.app-icon {
-  width: 40px;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 3vw;
-  object-fit:cover;
-	border-radius:50%;
+.app-title {
+  
 }
 
 .list-right {
