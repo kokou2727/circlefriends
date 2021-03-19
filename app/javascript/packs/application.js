@@ -10,7 +10,7 @@ require('jquery')
 require("channels")
 require('bootstrap/dist/js/bootstrap.min.js')
 require('../invite')
-require('../profile')
+require('../preview')
 
 window.$ = jQuery;
 import '@fortawesome/fontawesome-free/js/all';
