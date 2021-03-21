@@ -1,0 +1,38 @@
+<div class='search-header'>
+  <div class="search-form-area">
+    <%= form_tag(searches_path, method: 'get', id:'search') do %>
+      <%= text_field_tag :search, params[:search], class: "search-form", id: "search_area", placeholder: "タイトルを入力"%>
+      <%= submit_tag '検索', class: "search-btn" %>
+    <% end %>
+  </div>
+  <div class="serch-path-areas">
+    <div class="search-path">
+      <%= link_to searches_path(search: @search_result), style:"text-decoration: none" do %>
+        <div class="search-path-area">
+          <span>post</span>
+        </div>
+      <% end %>
+    </div>
+    <div class="search-path">
+      <%= link_to searches_search_name_path(search: @search_result), style:"text-decoration: none" do %>
+        <div class="search-path-area">
+          <span>name</span>
+        </div>
+      <% end %>
+    </div>
+    <div class="search-path">
+      <%= link_to searches_search_job_path(search: @search_result), style:"text-decoration: none" do %>
+        <div class="search-path-area">
+          <span>job</span>
+        </div>
+      <% end %>
+    </div>
+    <div class="search-path">
+      <%= link_to searches_search_group_path(search: @search_result), style:"text-decoration: none" do %>
+        <div class="search-path-area">
+          <span>group</span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

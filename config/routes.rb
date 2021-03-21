@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'posts/index'
   get 'users/add_user_to_group'
   get 'group_users/participate'
+  get 'searches/search_name'
+  get 'searches/search_job'
+  get 'searches/search_group'
+
   root to: "posts#index"
   resources :posts, only: [:index, :create] do
     resources :likes, only: [:create, :destroy]
@@ -15,4 +19,5 @@ Rails.application.routes.draw do
   resources :groups, only: [:index, :new, :create, :edit, :update, :destroy, :show] do
     resources :chats, only: [:index, :create, :destroy]
   end
+  resources :searches,only:[:index]
 end

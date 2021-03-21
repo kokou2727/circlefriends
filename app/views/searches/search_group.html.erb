@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <div class='side-bar'>
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class='main'>
+    <%= render "search_header" %>
+    <div class='search-main'>
+      <% @groups.each do |group| %>
+        <%= group.group_name %>
+      <% end %>
+    </div>
+  </div>
+  <div class='left-bar'>
+  <div>
+</div>
