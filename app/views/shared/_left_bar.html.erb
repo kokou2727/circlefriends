@@ -1,4 +1,6 @@
-<%= form_tag(searches_path, method: 'get', id: 'search') do %>
-  <%= text_field_tag :search, params[:search], class: "search-form", id: "search_area", placeholder: "タイトルを入力"%>
-  <%= submit_tag '検索', class: "search-btn" %>
-<% end %>
+<div class="search-form-area">
+  <%= form_tag(searches_path, method: 'get', id:'search', class:'search') do %>
+    <%= image_submit_tag "search.png", class: "search-btn" %>
+    <%= text_field_tag :search, params[:search], class: "search-form", id: "search_area", placeholder: "キーワードで検索"%>
+  <% end %>
+</div>
