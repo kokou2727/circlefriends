@@ -1,0 +1,37 @@
+.search-header {
+  height: 100px;
+  border-bottom: solid 1px #c3c3c3;
+}
+
+.search-main {
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+}
+
+.search-form-area {
+  height: 40%;
+}
+
+.search-form {
+  width: 80%;;
+}
+
+.serch-path-areas {
+  display: flex;
+  height: 60%;
+}
+
+.search-path {
+  width: 25%;
+}
+
+.search-path-area {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-path-area:hover {
+  background-color: rgb(219, 205, 187);
+}
