@@ -77,9 +77,8 @@
   height: 50px;
   width: 50px;
   margin-top: 10px;
-  object-fit: cover;
 	border-radius:50%;
-  border: solid 1px rgba(255, 255, 255, 0.5);
+  border: solid 1px #d6d3d3;
 }
 
 .image {
