@@ -7,16 +7,19 @@
         <div class="snip1344" style="height: 100%">
         <h1>サークル編集</h1>
         <%=form_with model: @group, local: true do |f|%>
-          <label>
-            <% if @group.image.present? %>
-              <%= image_tag @group.image, class: "background background-image" %>
-                <%= image_tag @group.image, class: "user-profile user-profile-image" %>
-            <% else %>
-              <%= image_tag "profile.png", class:"background background-image" %>
-                <%= image_tag "profile.png", class:"user-profile user-profile-image"  %>
-            <% end %>
-            <%= f.file_field :image, class:"hidden hidden_file" %>
-          </label>
+          <% if @group.image.present? %>
+            <%= image_tag @group.image, class: "background background-image" %>
+            <label>
+              <%= image_tag @group.image, class: "user-profile user-profile-image" %>
+              <%= f.file_field :image, class:"hidden hidden_file" %>
+            </label>
+           <% else %>
+            <%= image_tag "profile.png", class:"background background-image" %>
+            <label>
+              <%= image_tag "profile.png", class:"user-profile user-profile-image"  %>
+              <%= f.file_field :image, class:"hidden hidden_file" %>
+            </label>
+          <% end %>
 
           <figcaption>
             <div class='user-information-edit'>
