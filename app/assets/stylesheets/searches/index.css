@@ -35,3 +35,15 @@
 .search-path-area:hover {
   background-color: rgb(219, 205, 187);
 }
+
+.user-job{
+  font-size: 15px;
+  opacity: 0.75;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.user-job a:link,.user-job a:visited,.user-job a:hover,.user-job a:active {
+  color: #f39c12;
+}

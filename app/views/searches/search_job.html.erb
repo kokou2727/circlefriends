@@ -6,7 +6,32 @@
     <%= render "search_header" %>
     <div class='search-main'>
       <% @job_users.each do |user| %>
-        <%= user.name %>
+        <%= link_to user_path(user) do%>
+          <div class="group-infomation">
+            <% if user.image.present? %>
+              <%= image_tag(user.image, class:"post-icon")%>
+            <% else %>
+              <%= image_tag("profile.png", class:"post-icon ")%>
+            <% end %>
+            <div class="group-name-message">
+              <div style="display: flex">
+                <div class="group-names">
+                  <%= user.name %>
+                </div>
+                <% if user.job.present? %>
+                  <div class="user-job">
+                    <%= link_to "#{user.job}", '#' %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="group-message">
+                <% if user.profile.present? %>
+                  <%= user.profile %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

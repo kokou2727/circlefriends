@@ -20,10 +20,9 @@
 }
 
 .post-job {
-  color: #434a54;
   font-size: 15px;
   opacity: 0.75;
-  margin: 10px 0 10px 10px;
+  margin-left: 10px;
 }
 
 .post-job a:link,.post-job a:visited,.post-job a:hover,.post-job a:active {

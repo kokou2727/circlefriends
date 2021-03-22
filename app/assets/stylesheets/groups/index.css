@@ -50,3 +50,14 @@
   align-items: center;
   color: white;
 }
+
+.group-participated {
+  display: inline-block;
+  font-size: 20px;
+  padding-right: 10px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 255, 149);
+}
