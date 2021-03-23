@@ -1,32 +1,4 @@
-<div class="search-form-area">
-  <%= form_tag(searches_path, method: 'get', id:'search', class:'search') do %>
-    <%= image_submit_tag "search.png", class: "search-btn" %>
-    <%= text_field_tag :search, params[:search], class: "search-form", id: "search_area", placeholder: "キーワードで検索"%>
-  <% end %>
-
-  <div class="side-information">
-    気になるサークルに入ってみよう！
-  </div>
-
-  <div class="side-groups">
-    <% @side_groups.each do |group| %>
-      <div class="col-sm-4 h-auto ">
-        <%= link_to group_users_self_participate_path(group_id: group.id, user_id: current_user.id), class:"group_path", data: {"turbolinks" => false} do%>
-          <div class="side-group">
-            <% if group.image.present? %>
-              <%= image_tag(group.image, class:"post-icon")%>
-            <% else %>
-              <%= image_tag("profile.png", class:"post-icon ")%>
-            <% end %>
-            <div class="side-group-name">
-              <%= group.group_name %>
-            </div>
-            <div class="side-group-user-count">
-              <i class="fas fa-users side-group-users-image"></i><%= group.users.count %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= form_tag(searches_path, method: 'get', id: 'search') do %>
+  <%= text_field_tag :search, params[:search], class: "search-form", id: "search_area", placeholder: "タイトルを入力"%>
+  <%= submit_tag '検索', class: "search-btn" %>
+<% end %>

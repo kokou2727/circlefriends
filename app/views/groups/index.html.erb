@@ -3,64 +3,24 @@
     <%= render "shared/side_bar" %>
   </div>
   <div class='group-page'>
-    <div class="group-page-header">
-      <div class="group-list-page">
-        サークル一覧
-      </div>
-      <%= link_to new_group_path do%>
-        <div class="group-new">サークルを作成する</div>
-      <% end %>
+    <div class="group-new">
+      <%= link_to 'グループ新規作成', new_group_path %>
     </div>
-    <div class="group-index">
     <% current_user.groups.each do |group| %>
-      <% unless GroupUser.find_by(user_id: current_user.id, group_id: group.id).permit %>
-        <%= link_to group_users_participate_path(group_id: group.id), data: {"turbolinks" => false} do%>
-          <div class="group-information">
-            <% if group.image.present? %>
-              <%= image_tag(group.image, class:"post-icon")%>
-            <% else %>
-              <%= image_tag("profile.png", class:"post-icon ")%>
-            <% end %>
-            <div class="group-name-message">
-              <div class="group-names">
-                <%= group.group_name %>
-              </div>
-              <div class="group-message">
-                <% if group.chats.present? %>
-                  <%= group.chats.order(created_at: :desc).take.message %>
-                <% end %>
-              </div>
-            </div>
-            <div class="group-participate-area">
-              <div class="group-participate">
-                未参加
-              </div>
-            </div>
-          </div>
-        <% end %>
+    <div class="group-infomation">
+      <% if group.image.present? %>
+        <%= link_to image_tag(group.image, class:"post-icon"), group_chats_path(group), data: {"turbolinks" => false}%>
       <% else %>
-        <%= link_to group_chats_path(group), class:"group_path", data: {"turbolinks" => false} do%>
-          <div class="group-information">
-            <% if group.image.present? %>
-              <%= image_tag(group.image, class:"post-icon")%>
-            <% else %>
-              <%= image_tag("profile.png", class:"post-icon ")%>
-            <% end %>
-            <div class="group-name-message">
-              <div class="group-names">
-                <%= group.group_name %>
-              </div>
-              <div class="group-message">
-                <% if group.chats.present? %>
-                  <%= group.chats.order(created_at: :desc).take.message %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        <% end %>
+        <%= link_to image_tag("profile.png", class:"post-icon "), group_chats_path(group), data: {"turbolinks" => false}%>
       <% end %>
-    <% end %>
+      <div class="group-name-list">
+        <%= link_to group.group_name, group_chats_path(group), data: {"turbolinks" => false}%>
+      </div>
+      <% unless GroupUser.find_by(user_id: current_user.id, group_id: group.id).permit %>
+        <%= link_to '参加', group_users_participate_path(group_id: group.id), data: {"turbolinks" => false}%>
+      <% end %>
     </div>
+    <% end %>
   </div>
   <div class='left-bar'>
     <%= render "shared/left_bar" %>

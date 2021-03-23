@@ -14,7 +14,7 @@
         </div>
         <% if post.user.job.present? %>
           <div class="post-job">
-            <%= link_to "#{post.user.job}", searches_search_job_path(search: post.user.job) %>
+            <%= link_to "#{post.user.job}", '#' %>
           </div>
         <% end %>
         <span class='nakaten'>・</span>

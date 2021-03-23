@@ -1,5 +1,6 @@
 <div class='like-unlike'>
-  <% unless post.like_user(current_user.id).blank? %>
+  <% if user_signed_in? %>
+    <% unless post.like_user(current_user.id).blank? %>
     <div class="unlike">
       <%= link_to post_like_path(post_id: post.id, id: post.likes[0].id), method: :delete, remote: true do %>
         <div class='like-btn-area'>
@@ -10,7 +11,7 @@
         <span><%= post.likes.count %></span>
       <% end %>
     </div>
-  <% else %>
+    <% else %>
     <div class="like">
       <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
         <div class='unlike-btn-area'>
@@ -21,5 +22,6 @@
         <span><%= post.likes.count %></span>
       <% end %>
     </div>
+    <% end %>
   <% end %>
 </div>

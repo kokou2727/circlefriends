@@ -1,0 +1,49 @@
+<div class="wrapper">
+  <div class='side-bar'>
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class='main'>
+    <h2>ハッシュタグ #<%= @tag.hashname %></h2>
+    <% @posts.each do |post| %>
+      <div class="post">
+        <div class='post-icon-area'>
+          <% if post.user.image.present? %>
+            <%= link_to image_tag(post.user.image, class:"post-icon"), user_path(post.user_id) %>
+          <% else %>
+            <%= link_to image_tag("profile.png", class:"post-icon"), user_path(post.user_id) %>
+          <% end %>
+        </div>
+        <div class='post-area'>
+          <div class="upper-post">
+            <div class="post-user">
+              <%= link_to "#{post.user.name}", user_path(post.user_id)%>
+            </div>
+            <div class="post-job">
+              <%= link_to "#{post.user.job}", user_path(post.user_id)%>
+            </div>
+            <span class='nakaten'>・</span>
+            <div class="date">
+              <%= time_ago_in_words(post.created_at) %>前
+            </div>
+          </div>
+          <div class="middle-post">
+            <div lang="ja" dir="auto" class="post-content-area">
+              <span class="post-content"><%= render_with_hashtags(post.text) %></span>
+            </div>
+            <div class='image'>
+              <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
+            </div>
+          </div>
+          <div class='under-post'>
+            <div id="likes_buttons<%= post.id %>">
+              <%= render partial: 'likes/like', locals: { post: post } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class='left-bar'>
+    <%= render "shared/left_bar" %>
+  <div>
+</div>

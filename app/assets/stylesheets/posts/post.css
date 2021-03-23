@@ -1,11 +1,7 @@
 .post {
   padding: 0 15px;
-  border-bottom: solid 1px #f1efef;
+  border-top: solid 1px #c3c3c3;
   display: flex;
-}
-
-.post:hover {
-  background-color: #f4eee8ce;
 }
 
 .post-area {
@@ -15,19 +11,19 @@
 .upper-post {
   display: flex;
   align-items: center;
-  margin-top: 10px;
 }
 
 .post-user {
   color: #434a54;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 23px;
+  font-family: 'Vollkorn', serif;
 }
 
 .post-job {
+  color: #434a54;
   font-size: 15px;
   opacity: 0.75;
-  margin-left: 10px;
+  margin: 10px 0 10px 10px;
 }
 
 .post-job a:link,.post-job a:visited,.post-job a:hover,.post-job a:active {
@@ -61,7 +57,7 @@
 .post-content {
   color: #434a54;
   font-size: 16px;
-  font-family: "Helvetica Neue";
+  font-family: 'Noto Sans JP', sans-serif;
   word-break: break-all;
   white-space: pre-wrap;
 }
@@ -81,8 +77,9 @@
   height: 50px;
   width: 50px;
   margin-top: 10px;
+  object-fit: cover;
 	border-radius:50%;
-  border: solid 1px #d6d3d3;
+  border: solid 1px rgba(255, 255, 255, 0.5);
 }
 
 .image {
