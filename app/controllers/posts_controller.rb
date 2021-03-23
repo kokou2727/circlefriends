@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   def index
+    @side_groups = Group.order("RAND()").limit(12)
     @posts = Post.all.order('created_at DESC').includes(:user)
     @post = Post.new
   end
@@ -11,12 +13,6 @@ class PostsController < ApplicationController
     else
       redirect_to root_path
     end
-  end
-
-  def hashtag
-    @user = current_user
-    @tag = Hashtag.find_by(hashname: params[:name])
-    @posts = @tag.posts
   end
 end
 

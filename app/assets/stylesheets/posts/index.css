@@ -2,10 +2,10 @@
   display: flex;
 }
 .side-bar {
-  background-color: rgb(219, 205, 187);
+  background-color: #fef8f3ce;
   width: 350px;
   height: 100vh;
-  border-right: solid 1px #ececec;
+  border-right: solid 1px #f1efef;
 }
 .main {
   background-color: #fef8f3ce;
@@ -15,11 +15,12 @@
 .left-bar {
   height: 100vh;
   width: calc(100vw - 610px - 350px );
-  background-color: rgb(219, 205, 187);
+  background-color: #fef8f3ce;
+  border-left: solid 1px #ececec;
 }
 .post-header {
   height: 150px;
-  border-bottom: solid 1px #c3c3c3;
+  border-bottom: solid 1px #ececec;
 }
 
 .post-main {
@@ -37,8 +38,7 @@
 }
 
 .form {
-  border-top: solid 1px #c3c3c3;
-  background-color:  #fef8f3ce;
+  border-top: solid 1px #f1efef;
   height: 100px;
   display: flex;
   padding: 8px;
@@ -72,15 +72,14 @@
 
 .form-send{
   background-color: rgb(219, 205, 187);
-  border: solid 2px rgba(219, 205, 187, 0.855);
   padding: 0 20px;
   height: 40px;
   width: 120px;
   font-size: 16px;
+  font-weight: 600;
   color: white;
   border: none;
   border-radius: 16px;
-  
 }
 
 .form-image {

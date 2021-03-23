@@ -7,8 +7,8 @@
         <div class="snip1344" style="height: 100%">
         <h1>新規サークル作成</h1>
         <%=form_with model: @group, local: true do |f|%>
+          <%= image_tag "profile.png", class:"background background-image" %>
           <label>
-            <%= image_tag "profile.png", class:"background background-image" %>
             <%= image_tag "profile.png", class:"user-profile user-profile-image"  %>
             <%= f.file_field :image, class:"hidden hidden_file" %>
           </label>

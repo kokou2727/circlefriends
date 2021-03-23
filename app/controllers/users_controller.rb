@@ -1,10 +1,7 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.all
-    @groups = current_user.groups
-  end
-
+  before_action :authenticate_user!
   def edit
+    @side_groups = Group.order("RAND()").limit(12)
     @user = User.find(params[:id])
   end
 
@@ -18,12 +15,15 @@ class UsersController < ApplicationController
 
 
   def show
+    @side_groups = Group.order("RAND()").limit(12)
     @user = User.find(params[:id])
     @posts = @user.posts
   end
 
   def add_user_to_group
-    GroupUser.create(user_id: params[:user_id], group_id: params[:group_id], permit: false)
+    unless GroupUser.exists?(user_id: params[:user_id], group_id: params[:group_id])
+      GroupUser.create(user_id: params[:user_id], group_id: params[:group_id], permit: false)
+    end
   end
 
   private

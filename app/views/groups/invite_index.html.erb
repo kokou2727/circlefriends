@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class='side-bar'>
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class='main'>
+    <div class="invite-header">
+      <div class="group-list-page">
+        <%= @group.group_name %>
+      </div>
+      <%= link_to group_chats_path(@group), class:"group_path", data: {"turbolinks" => false} do%>
+        <div class="invite-btn" id="invite-btn">ユーザーを招待する</div>
+      <% end %>
+    </div>
+    <div class="invite-area">
+      <% current_user.followings.each do |user| %>
+        <% unless @group.user_ids.include?(user.id) %>
+          <div class="group-information">
+            <% if user.image.present? %>
+              <%= image_tag(user.image, class:"post-icon")%>
+            <% else %>
+              <%= image_tag("profile.png", class:"post-icon ")%>
+            <% end %>
+            <div class="group-name-message">
+              <div style="display: flex">
+                <div class="group-names">
+                  <%= user.name %>
+                </div>
+                <% if user.job.present? %>
+                  <div class="user-job">
+                    <%= link_to "#{user.job}", searches_search_job_path(search: user.job) %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="group-message">
+                <% if user.profile.present? %>
+                  <%= user.profile %>
+                <% end %>
+              </div>
+            </div>
+            <div class="group-participate-area">
+              <div class="group-participated">
+                <input type="checkbox" name="group_invite_check" user_id=<%= "#{user.id}" %> group_id=<%= "#{@group.id}" %>>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class='left-bar'>
+    <%= render "shared/left_bar" %>
+  <div>
+</div>

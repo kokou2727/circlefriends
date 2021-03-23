@@ -3,10 +3,7 @@
     <h3 class="app-title">CircleFriends</h3>
     <div class="list-right">
       <% if user_signed_in? %>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
       <% end %>
     </div>
   </div>
@@ -15,18 +12,36 @@
     <div style='width: 25%; height: 100%'></div>
     <div style='width: calc(100% - 25%); height: 100%'>
     <ul class='side-list'>
-      <div class='home'>
-        <%= link_to image_tag("home.png", class:"home-icon"), root_path %>
-        <li><%= link_to 'ホーム', root_path, class: "home-list", style:'text-decoration: none'%></li>
-      </div>
-      <div class='circle'>
-      <%= link_to image_tag("circle.png", class:"circle-icon"), groups_path %>
-        <li><%= link_to 'サークル', groups_path, class: "circle-list", style:'text-decoration: none'%></li>
-      </div>
-      <% if user_signed_in? %>
+      <%= link_to root_path do%>
+        <div class='home'>
+          <div class="side-icon-area">
+            <i class="fas fa-home side-icon"></i>
+          </div>
+          <li class="home-list">ホーム</li>
+        </div>
+      <% end %>
+      <%= link_to groups_path do%>
+        <div class='circle'>
+          <div class="side-icon-area">
+            <i class="fas fa-hands-helping side-icon"></i>
+          </div>
+          <li class="circle-list">サークル</li>
+        </div>
+      <% end %>
+      <%= link_to user_path(current_user) do%>
         <div class='profile'>
-        <%= link_to image_tag("profile.png", class:"profile-icon"), user_path(current_user) %>
-          <li><%= link_to 'プロフィール', user_path(current_user), class: "profile-list", style:'text-decoration: none' %></li>
+          <div class="side-icon-area">
+            <i class="fas fa-user side-icon"></i>
+        </div>
+          <li class="profile-list">プロフィール</li>
+        </div>
+      <% end %>
+      <%= link_to searches_path do%>
+        <div class='side-search'>
+          <div class="side-icon-area">
+            <i class="fas fa-search side-icon"></i>
+          </div>
+          <li class="search-list">検索</li>
         </div>
       <% end %>
     </ul>
@@ -35,9 +50,8 @@
   
   <div class='side-footer'>
     <div class='footer-user'>
-    <% if user_signed_in? %>
       <%= current_user.name %>
-    <% end %>
     </div>
   </div>
 </div>
+
