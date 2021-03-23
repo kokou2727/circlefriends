@@ -3,10 +3,7 @@
     <h3 class="app-title">CircleFriends</h3>
     <div class="list-right">
       <% if user_signed_in? %>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
       <% end %>
     </div>
   </div>
@@ -31,15 +28,13 @@
           <li class="circle-list">サークル</li>
         </div>
       <% end %>
-      <% if user_signed_in? %>
-        <%= link_to user_path(current_user) do%>
-          <div class='profile'>
-            <div class="side-icon-area">
-              <i class="fas fa-user side-icon"></i>
-            </div>
-            <li class="profile-list">プロフィール</li>
-          </div>
-        <% end %>
+      <%= link_to user_path(current_user) do%>
+        <div class='profile'>
+          <div class="side-icon-area">
+            <i class="fas fa-user side-icon"></i>
+        </div>
+          <li class="profile-list">プロフィール</li>
+        </div>
       <% end %>
       <%= link_to searches_path do%>
         <div class='side-search'>
@@ -55,9 +50,7 @@
   
   <div class='side-footer'>
     <div class='footer-user'>
-    <% if user_signed_in? %>
       <%= current_user.name %>
-    <% end %>
     </div>
   </div>
 </div>
