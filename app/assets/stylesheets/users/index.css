@@ -7,6 +7,16 @@
   justify-content: space-between;
 }
 
+.invite-btn{
+  background-color: rgb(219, 205, 187);
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 50px;
+}
+
 .invite-area {
   height: 100% - 70px;
   overflow-y: scroll;
