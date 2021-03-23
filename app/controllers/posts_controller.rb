@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   def index
-    @side_groups = Group.order("RAND()").limit(12)
     @posts = Post.all.order('created_at DESC').includes(:user)
     @post = Post.new
   end
