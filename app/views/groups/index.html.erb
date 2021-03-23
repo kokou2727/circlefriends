@@ -4,15 +4,18 @@
   </div>
   <div class='group-page'>
     <div class="group-page-header">
-      <div class="group-new">
-        <%= link_to 'グループ新規作成', new_group_path %>
+      <div class="group-list-page">
+        サークル一覧
       </div>
+      <%= link_to new_group_path do%>
+        <div class="group-new">サークルを作成する</div>
+      <% end %>
     </div>
     <div class="group-index">
     <% current_user.groups.each do |group| %>
       <% unless GroupUser.find_by(user_id: current_user.id, group_id: group.id).permit %>
         <%= link_to group_users_participate_path(group_id: group.id), data: {"turbolinks" => false} do%>
-          <div class="group-infomation">
+          <div class="group-information">
             <% if group.image.present? %>
               <%= image_tag(group.image, class:"post-icon")%>
             <% else %>
@@ -37,7 +40,7 @@
         <% end %>
       <% else %>
         <%= link_to group_chats_path(group), class:"group_path", data: {"turbolinks" => false} do%>
-          <div class="group-infomation">
+          <div class="group-information">
             <% if group.image.present? %>
               <%= image_tag(group.image, class:"post-icon")%>
             <% else %>
