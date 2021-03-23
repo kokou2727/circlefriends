@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    @groups = current_user.groups
+    @group = Group.find(params[:group_id])
   end
 
   def edit
@@ -23,7 +23,9 @@ class UsersController < ApplicationController
   end
 
   def add_user_to_group
-    GroupUser.create(user_id: params[:user_id], group_id: params[:group_id], permit: false)
+    unless GroupUser.find_by(user_id: params[:user_id], group_id: params[:group_id])
+      GroupUser.create(user_id: params[:user_id], group_id: params[:group_id], permit: false)
+    end
   end
 
   private
