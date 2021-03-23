@@ -11,12 +11,13 @@
 .upper-post {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .post-user {
   color: #434a54;
-  font-size: 23px;
-  font-family: 'Vollkorn', serif;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .post-job {
