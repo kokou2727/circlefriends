@@ -1,5 +1,4 @@
 class SearchesController < ApplicationController
-  before_action :authenticate_user!
   def index
     @side_groups = Group.order("RAND()").limit(12)
     @posts = Post.where(['text LIKE ?', "%#{params[:search]}%"]).order(created_at: :desc)
