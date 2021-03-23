@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @side_groups = Group.order("RAND()").limit(12)
   end

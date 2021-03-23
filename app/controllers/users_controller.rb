@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   def edit
     @side_groups = Group.order("RAND()").limit(12)
     @user = User.find(params[:id])
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def add_user_to_group
-    unless GroupUser.find_by(user_id: params[:user_id], group_id: params[:group_id])
+    unless GroupUser.exists?(user_id: params[:user_id], group_id: params[:group_id])
       GroupUser.create(user_id: params[:user_id], group_id: params[:group_id], permit: false)
     end
   end
