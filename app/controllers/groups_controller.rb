@@ -42,10 +42,6 @@ class GroupsController < ApplicationController
     redirect_to root_path
   end
 
-  def invite_index
-    @group = Group.find(params[:group_id])
-  end
-
   private
   def group_params
     params.require(:group).permit(:group_name, :image, user_ids: [] )

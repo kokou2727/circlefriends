@@ -73,6 +73,7 @@
 
 .form-send{
   background-color: rgb(219, 205, 187);
+  border: solid 2px rgba(219, 205, 187, 0.855);
   padding: 0 20px;
   height: 40px;
   width: 120px;
@@ -81,6 +82,7 @@
   color: white;
   border: none;
   border-radius: 16px;
+  
 }
 
 .form-image {
