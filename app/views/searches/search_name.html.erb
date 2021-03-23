@@ -7,7 +7,7 @@
     <div class='search-main'>
       <% @name_users.each do |user| %>
         <%= link_to user_path(user) do%>
-          <div class="group-infomation">
+          <div class="group-information">
             <% if user.image.present? %>
               <%= image_tag(user.image, class:"post-icon")%>
             <% else %>
