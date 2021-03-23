@@ -117,6 +117,9 @@
 
 }
 .snip1344 .background {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   vertical-align: top;
   opacity: 0.2;
