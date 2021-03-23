@@ -19,6 +19,6 @@
 }
 
 .invite-area {
-  height: 100% - 70px;
+  height: 100vh - 70px;
   overflow-y: scroll;
 }
