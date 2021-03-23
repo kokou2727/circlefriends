@@ -1,5 +1,6 @@
 class ChatsController < ApplicationController
   def index
+    @side_groups = Group.order("RAND()").limit(12)
     @group = Group.find(params[:group_id])
     @chat = Chat.new
     @chats = @group.chats.includes(:user)
