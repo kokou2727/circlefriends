@@ -1,8 +1,10 @@
 class GroupsController < ApplicationController
   def index
+    @side_groups = Group.order("RAND()").limit(12)
   end
 
   def new
+    @side_groups = Group.order("RAND()").limit(12)
     @group = Group.new
     @group.users << current_user
   end
@@ -19,6 +21,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @side_groups = Group.order("RAND()").limit(12)
     @group = Group.find(params[:id])
   end
 
@@ -43,6 +46,7 @@ class GroupsController < ApplicationController
   end
 
   def invite_index
+    @side_groups = Group.order("RAND()").limit(12)
     @group = Group.find(params[:group_id])
   end
 

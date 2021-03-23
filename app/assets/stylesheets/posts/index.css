@@ -20,7 +20,7 @@
 }
 .post-header {
   height: 150px;
-  border-bottom: solid 1px #c3c3c3;
+  border-bottom: solid 1px #ececec;
 }
 
 .post-main {
@@ -39,7 +39,6 @@
 
 .form {
   border-top: solid 1px #f1efef;
-  background-color:  #fef8f3ce;
   height: 100px;
   display: flex;
   padding: 8px;

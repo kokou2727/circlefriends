@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def edit
+    @side_groups = Group.order("RAND()").limit(12)
     @user = User.find(params[:id])
   end
 
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
 
 
   def show
+    @side_groups = Group.order("RAND()").limit(12)
     @user = User.find(params[:id])
     @posts = @user.posts
   end
