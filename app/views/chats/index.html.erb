@@ -9,7 +9,7 @@
         <%= @group.group_name %>
       </div>
       <div class="group-actions">
-        <%= link_to users_path(current_user, group_id: @group.id) do %>
+        <%= link_to groups_invite_index_path(@group, group_id: @group.id) do %>
           <i class="far fa-handshake group-action-icon"></i>
         <% end %>
         <%= link_to group_user_path(@group, group_id: @group.id), method: :delete do %>

@@ -15,11 +15,11 @@
       </h2>
       <% if current_user.id == @user.id %>
         <div style="margin: 0 0 0 auto">
-        <%= link_to edit_user_path(@user), style:"text-decoration: none" do %>
-          <div class="profile-edit-path-area">
-            <span class="profile-edit-path">プロフィールを編集</span>
-          </div>
-        <% end %>
+          <%= link_to edit_user_path(@user), style:"text-decoration: none" do %>
+            <div class="profile-edit-path-area">
+              <span class="profile-edit-path">プロフィールを編集</span>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>

@@ -1,9 +1,4 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.all
-    @group = Group.find(params[:group_id])
-  end
-
   def edit
     @user = User.find(params[:id])
   end
