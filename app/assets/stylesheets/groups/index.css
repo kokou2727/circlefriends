@@ -6,25 +6,6 @@
 .group-page-header {
   height: 50px;
   border-bottom: solid 1px #f1efef;
-  padding: 0px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.group-list-page {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.group-new {
-  background-color: rgb(219, 205, 187);
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  border: none;
-  border-radius: 50px;
 }
 
 .group-index{
@@ -32,13 +13,13 @@
   height: calc(100vh - 50px);
 }
 
-.group-information {
+.group-infomation {
   display: flex;
   border-bottom: solid 1px #f1efef;
   padding: 0 10px 10px 10px;
 }
 
-.group-information:hover {
+.group-infomation:hover {
   background-color: #f4eee8ce;
 }
 

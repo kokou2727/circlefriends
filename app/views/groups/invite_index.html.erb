@@ -4,7 +4,7 @@
   </div>
   <div class='main'>
     <div class="invite-header">
-      <div class="group-list-page">
+      <div class="group-name">
         <%= @group.group_name %>
       </div>
       <%= link_to group_chats_path(@group), class:"group_path", data: {"turbolinks" => false} do%>
@@ -14,7 +14,7 @@
     <div class="invite-area">
       <% current_user.followings.each do |user| %>
         <% unless @group.user_ids.include?(user.id) %>
-          <div class="group-information">
+          <div class="group-infomation">
             <% if user.image.present? %>
               <%= image_tag(user.image, class:"post-icon")%>
             <% else %>
