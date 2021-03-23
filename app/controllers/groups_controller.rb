@@ -1,8 +1,11 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
   def index
+    @side_groups = Group.order("RAND()").limit(12)
   end
 
   def new
+    @side_groups = Group.order("RAND()").limit(12)
     @group = Group.new
     @group.users << current_user
   end
@@ -19,6 +22,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @side_groups = Group.order("RAND()").limit(12)
     @group = Group.find(params[:id])
   end
 
@@ -40,6 +44,11 @@ class GroupsController < ApplicationController
     group = Group.find(params[:id])
     group.destroy
     redirect_to root_path
+  end
+
+  def invite_index
+    @side_groups = Group.order("RAND()").limit(12)
+    @group = Group.find(params[:group_id])
   end
 
   private

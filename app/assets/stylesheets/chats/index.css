@@ -12,6 +12,7 @@
 .group-name {
   font-size: 25px;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .group-actions{
