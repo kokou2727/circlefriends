@@ -10,4 +10,9 @@ class GroupUsersController < ApplicationController
     group_user.update(permit: true)
     redirect_to group_chats_path(params[:group_id])
   end
+
+  def self_participate
+    GroupUser.create(user_id: params[:user_id], group_id: params[:group_id], permit: true)
+    redirect_to group_chats_path(params[:group_id])
+  end
 end

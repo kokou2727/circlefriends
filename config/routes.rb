@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'posts/index'
   get 'users/add_user_to_group'
   get 'group_users/participate'
+  get 'group_users/self_participate'
   get 'searches/search_name'
   get 'searches/search_job'
   get 'searches/search_group'
