@@ -1,5 +1,4 @@
 .side {
-  border-right: solid 1px #c0c0c0;
 }
 .side-header {
   height: 100px;
@@ -10,7 +9,7 @@
 }
 
 .app-title {
-  
+  font-family: 'Kaushan Script', cursive;
 }
 
 .list-right {
@@ -61,12 +60,21 @@
 }
 
 .home:hover {
-  background-color: rgb(244, 212, 153);
+  background-color: rgb(255, 244, 227);
+  color: rgb(183, 104, 0);
 }
 
-.home-icon {
-  width: 35px;
-  margin-right: 20px;
+.side-icon {
+  font-size: 30px;
+}
+
+.side-icon-area {
+  margin-right: 15px;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .circle {
@@ -77,13 +85,9 @@
   border-radius: 50px;
 }
 
-.circle-icon {
-  width: 35px;
-  margin-right: 20px;
-}
-
 .circle:hover {
-  background-color: rgb(244, 212, 153);
+  background-color: rgb(255, 244, 227);
+  color: rgb(183, 104, 0);
 }
 
 
@@ -91,17 +95,26 @@
   padding: 10px;
   display: flex;
   align-items: center;
-  width: 200px;
+  width: 210px;
   border-radius: 50px;
 }
 
-.profile-icon {
-  width: 35px;
-  margin-right: 20px;
+.profile:hover {
+  background-color: rgb(255, 244, 227);
+  color: rgb(183, 104, 0);
 }
 
-.profile:hover {
-  background-color: rgb(244, 212, 153);
+.side-search {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 130px;
+  border-radius: 50px;
+}
+
+.side-search:hover {
+  background-color: rgb(255, 244, 227);
+  color: rgb(183, 104, 0);
 }
 
 
@@ -110,6 +123,6 @@
 }
 
 .footer-user {
-  font-family: 'Vollkorn', serif;
   font-size: 22px;
+  font-weight: bold;
 }

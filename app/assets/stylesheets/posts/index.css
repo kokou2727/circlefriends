@@ -2,10 +2,10 @@
   display: flex;
 }
 .side-bar {
-  background-color: rgb(219, 205, 187);
+  background-color: #fef8f3ce;
   width: 350px;
   height: 100vh;
-  border-right: solid 1px #ececec;
+  border-right: solid 1px #f1efef;
 }
 .main {
   background-color: #fef8f3ce;
@@ -15,7 +15,8 @@
 .left-bar {
   height: 100vh;
   width: calc(100vw - 610px - 350px );
-  background-color: rgb(219, 205, 187);
+  background-color: #fef8f3ce;
+  border-left: solid 1px #ececec;
 }
 .post-header {
   height: 150px;
@@ -37,7 +38,7 @@
 }
 
 .form {
-  border-top: solid 1px #c3c3c3;
+  border-top: solid 1px #f1efef;
   background-color:  #fef8f3ce;
   height: 100px;
   display: flex;

@@ -1,15 +1,15 @@
 .search-header {
-  height: 110px;
-  border-bottom: solid 1px #c3c3c3;
+  height: 117px;
+  border-bottom: solid 2px #c3c3c3;
 }
 
 .search-main {
-  height: calc(100vh - 110px);
+  height: calc(100vh - 117px);
   overflow-y: scroll;
 }
 
 .search-form-area {
-  height: 40px;
+  height: 45px;
   padding-top: 10px;
 }
 
@@ -52,7 +52,8 @@
 }
 
 .search-path-area:hover {
-  background-color: rgb(219, 205, 187);
+  background-color: rgb(253, 246, 236);
+
 }
 
 .user-job{
