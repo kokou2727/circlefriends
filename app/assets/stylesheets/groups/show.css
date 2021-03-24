@@ -1,0 +1,130 @@
+.call-page {
+  background-color: #fef8f3ce;
+  height: 100vh;
+  width: 100vw;
+}
+
+.call-header{
+  height: 150px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.call-room-name {
+  font-weight: bold;
+}
+
+.call-status-information {
+  align-items: center;
+  font-weight: bold;
+  color: #7c7b7b;
+  margin-right: 20px;
+}
+
+.call-action-join {
+  background-color: rgb(202, 190, 174);
+  padding: 20px 30px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.call-action-leave {
+  background-color: rgb(185, 173, 158);
+  padding: 20px 30px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.call-action-join:hover {
+  background-color: rgb(105, 98, 89);
+}
+
+.call-action-leave:hover {
+  background-color: rgb(105, 98, 89);
+}
+
+.videosContainer {
+  padding: 20px 10px;
+  height: 280px;
+  display: flex;
+  background-color: #f6e4d5ce;
+  overflow-x: scroll;
+}
+
+.videos-area::before,
+.videos-area::after{
+  content: "";
+  display: block;
+  height: 5px;
+  background: linear-gradient(to right, #f15151 0%, #f8db5a 100%);
+}
+
+.videosContainer video {
+  border-radius: 16px;
+  margin: 0 10px;
+  border: solid 3px rgb(219, 205, 187);
+}
+
+.myControllerContainer {
+  display: flex;
+  padding: 30px 20px;
+}
+
+.call-action-btn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+.select {
+  height: 70px;
+  background-color: rgb(202, 190, 174);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.call-select {
+  margin: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.call-action-btn-area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.call-action-audio {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  background-color: rgb(202, 190, 174);
+  border-radius: 50%;
+  color: white;
+  font-size: 50px;
+}
+
+.call-btns {
+  height: calc(100vh - 150px - 280px - 10px);
+  display: flex;
+  align-items: center;
+}

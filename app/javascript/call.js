@@ -36,6 +36,7 @@ $(function(){
       $('#my-id').text(peer.id);
       setupMuteOnUI()
       setupVideoOffUI()
+      setupMakeCallUI()
   });
 
   peer.on('error', function(err){
