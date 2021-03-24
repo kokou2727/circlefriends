@@ -1,27 +1,43 @@
-<div id='group'>
-  <div class="videosContainer">
-    <video id="myStream" autoplay="" muted="true"></video>
-  </div>
-  <div class="myControllerContainer">
-    <p>Your id: <span id="my-id"></span></p>
-    <div class="select">
-        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
-    </div>
-    <div class="select">
-        <label for="videoSource">Video source: </label><select id="videoSource"></select>
-    </div>
+<div class="call-page" id='group'>
+  <div class="call-header">
+    <h1 class="call-room-name" id="join-room"><%= @group.group_name %></h1>
     <div id="make-call">
-        <p id="join-room"><%= @group.group_name %></p>
-        <button type="button" onclick="roomJoin()">join</button>
+        <span class="call-status-information">通話未参加です</span>
+        <button class="call-action-btn" type="button" onclick="roomJoin()">
+          <div class="call-action-join">参加</div>
+        </button>
     </div>
     <div id="end-call">
-        <p>Currently in room <span id="room-id"></span></p>
-        <%= link_to "leave", root_path, onclick: 'endRoom()'%>
+        <span class="call-status-information">通話参加中</span>
+        <%= link_to root_path do%>
+          <button class="call-action-btn" type="button" onclick="endRoom()">
+            <div class="call-action-leave">退出</div>
+          </button>
+        <% end %>
     </div>
-    <button id="mute-on" type="button" onclick="muteOn()">ミュート</button>
-    <button id="mute-off" type="button" onclick="muteOff()">ミュートoff</button>
-    <button id="video-off"type="button" onclick="videoOff()">画面off</button>
-    <button id="video-on"type="button" onclick="videoOn()">画面on</button>
+  </div>
+  <div class="videos-area">
+    <div class="videosContainer">
+      <video id="myStream" autoplay="" muted="true"></video>
+    </div>
+  </div>
+  <div class="call-btns">
+    <div class="myControllerContainer col-sm-6">
+      <div class="select">
+        <div class="call-select">
+          <label for="audioSource" style="margin: 0 10px 0 0">マイク選択:</label><select id="audioSource"></select>
+        </div>
+        <div class="call-select">
+          <label for="videoSource" style="margin: 0 10px 0 0">カメラ選択:</label><select id="videoSource"></select>
+        </div>
+      </div>
+    </div>
+    <div class="call-action-btn-area col-sm-6">
+      <button class="call-action-btn call-action-audio" id="mute-on" type="button" onclick="muteOn()"><i class="fas fa-microphone"></i></button>
+      <button class="call-action-btn call-action-audio" id="mute-off" type="button" onclick="muteOff()"><i class="fas fa-microphone-slash"></i></button>
+      <button class="call-action-btn call-action-audio" id="video-off"type="button" onclick="videoOff()"><i class="fas fa-video"></i></button>
+      <button class="call-action-btn call-action-audio" id="video-on"type="button" onclick="videoOn()"><i class="fas fa-video-slash"></i></button>
+    </div>
   </div>
 </div>
 
