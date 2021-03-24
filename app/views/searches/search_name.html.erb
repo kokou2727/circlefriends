@@ -46,9 +46,9 @@
           <%= link_to group_users_self_participate_path(group_id: group.id, user_id: current_user.id), class:"group_path", data: {"turbolinks" => false} do%>
             <div class="side-group">
               <% if group.image.present? %>
-                <%= image_tag(group.image, class:"post-icon")%>
+                <%= image_tag(group.image, class:"side-group-icon")%>
               <% else %>
-                <%= image_tag("profile.png", class:"post-icon ")%>
+                <%= image_tag("profile.png", class:"side-group-icon")%>
               <% end %>
               <div class="side-group-name">
                 <%= group.group_name %>
