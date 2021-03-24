@@ -49,11 +49,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+  color: #7c7b7b;
 }
 
 .search-path-area:hover {
   background-color: rgb(253, 246, 236);
-
+  color: rgb(183, 104, 0);
 }
 
 .user-job{

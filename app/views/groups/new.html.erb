@@ -21,11 +21,11 @@
               </div>
               <div class='group-form__field'>
                 <div class='group-form__field--left'>
-                  <label class='group-form__label' for='group_チャットメンバー'>チャットメンバー</label>
+                  <label class='group-form__label' for='group_チャットメンバー'>サークルメンバー</label>
                 </div>
                 <div class='group-form__field--right'>
                   <select name="group[user_ids[]">
-                    <option value="">チャットするユーザーを選択してください</option>
+                    <option value="">招待するユーザーを選択してください</option>
                     <% current_user.followings.each do |user| %>
                       <option value=<%= user.id %>><%= user.name %></option>
                     <% end %>
@@ -34,7 +34,7 @@
                 </div>
               </div>
               <div>
-                <%= f.submit 'サークル作成', class: '' %>
+                <%= f.submit 'サークル作成', class: 'circle-create-btn' %>
               </div>
             </div>
           </figcaption>

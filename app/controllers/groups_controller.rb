@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
       group_user.update(permit: true)
       redirect_to group_chats_path(@group)
     else
+      @side_groups = Group.order("RAND()").limit(12)
       render :new
     end
   end
@@ -31,6 +32,7 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to group_chats_path(@group)
     else
+      @side_groups = Group.order("RAND()").limit(12)
       render :edit
     end
   end

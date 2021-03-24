@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to user_path(current_user)
     else
+      @side_groups = Group.order("RAND()").limit(12)
       render :edit
     end
   end
