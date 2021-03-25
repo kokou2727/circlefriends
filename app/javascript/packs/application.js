@@ -12,6 +12,7 @@ require('bootstrap/dist/js/bootstrap.min.js')
 require('../invite')
 require('../preview')
 require('../search')
+require('../scroll')
 
 window.$ = jQuery;
 import '@fortawesome/fontawesome-free/js/all';
