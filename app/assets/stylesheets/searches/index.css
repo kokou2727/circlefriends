@@ -61,7 +61,7 @@
 
 .search-path-area:hover {
   background-color: rgb(253, 246, 236);
-  color: rgb(183, 104, 0);
+  color: #f39c12;
 }
 
 .user-job{
@@ -74,4 +74,9 @@
 
 .user-job a:link,.user-job a:visited,.user-job a:hover,.user-job a:active {
   color: #f39c12;
+}
+
+.current-search {
+  color: #f39c12;
+  border-bottom: solid 2px #f39c12;
 }

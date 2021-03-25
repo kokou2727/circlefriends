@@ -51,7 +51,7 @@
 
 .home:hover {
   background-color: rgb(255, 244, 227);
-  color: rgb(183, 104, 0);
+  color: #f39c12;;
 }
 
 .side-icon {
@@ -77,7 +77,7 @@
 
 .circle:hover {
   background-color: rgb(255, 244, 227);
-  color: rgb(183, 104, 0);
+  color: #f39c12;;
 }
 
 
@@ -91,7 +91,7 @@
 
 .profile:hover {
   background-color: rgb(255, 244, 227);
-  color: rgb(183, 104, 0);
+  color: #f39c12;;
 }
 
 .side-search {
@@ -104,7 +104,7 @@
 
 .side-search:hover {
   background-color: rgb(255, 244, 227);
-  color: rgb(183, 104, 0);
+  color: #f39c12;;
 }
 
 
@@ -123,4 +123,8 @@
   width: 60px;
 	border-radius:50%;
   border: solid 1px #d6d3d3;
+}
+
+.current-page {
+  color: #f39c12;
 }

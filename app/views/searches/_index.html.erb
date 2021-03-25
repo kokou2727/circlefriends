@@ -3,7 +3,7 @@
     <%= render "shared/side_bar" %>
   </div>
   <div class='main'>
-    <%= render "search_header" %>
+    <%= render partial: 'search_header'%>
     <div class='search-main'>
       <% @posts.each do |post| %>
         <div class="post">
