@@ -2,13 +2,13 @@ class RelationshipsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:create, :destroy]
   def follow_index
-    @side_groups = Group.order("RAND()").limit(12)
+    @side_groups = Group.order('RAND()').limit(12)
     @user = User.find(params[:user_id])
     @users = @user.followings
   end
 
   def follower_index
-    @side_groups = Group.order("RAND()").limit(12)
+    @side_groups = Group.order('RAND()').limit(12)
     @user = User.find(params[:user_id])
     @users = @user.followers
   end
@@ -24,6 +24,7 @@ class RelationshipsController < ApplicationController
   end
 
   private
+
   def set_user
     @user = User.find(params[:follow_id])
   end

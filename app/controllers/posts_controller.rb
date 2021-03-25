@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @side_groups = Group.order("RAND()").limit(12)
+    @side_groups = Group.order('RAND()').limit(12)
     @posts = Post.order('created_at DESC').limit(20).includes(:user).page(params[:page]).per(20)
     @post = Post.new
   end
@@ -17,6 +17,6 @@ end
 
 private
 
-  def post_params
-    params.require(:post).permit(:text,:image).merge(user_id: current_user.id)
-  end
+def post_params
+  params.require(:post).permit(:text, :image).merge(user_id: current_user.id)
+end

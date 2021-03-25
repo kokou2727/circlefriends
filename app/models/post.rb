@@ -12,15 +12,15 @@ class Post < ApplicationRecord
   end
 
   def was_attached?
-    self.image.attached?
+    image.attached?
   end
 
   after_create do
-    post = Post.find_by(id: self.id)
-    hashtags  = self.text.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+    post = Post.find_by(id: id)
+    hashtags = text.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
     post.hashtags = []
     hashtags.uniq.map do |hashtag|
-      #ハッシュタグは先頭の'#'を外した上で保存
+      # ハッシュタグは先頭の'#'を外した上で保存
       tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
       post.hashtags << tag
     end

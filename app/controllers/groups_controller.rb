@@ -1,11 +1,11 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @side_groups = Group.order("RAND()").limit(12)
+    @side_groups = Group.order('RAND()').limit(12)
   end
 
   def new
-    @side_groups = Group.order("RAND()").limit(12)
+    @side_groups = Group.order('RAND()').limit(12)
     @group = Group.new
     @group.users << current_user
   end
@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @side_groups = Group.order("RAND()").limit(12)
+    @side_groups = Group.order('RAND()').limit(12)
     @group = Group.find(params[:id])
   end
 
@@ -31,7 +31,7 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to group_chats_path(@group)
     else
-      @side_groups = Group.order("RAND()").limit(12)
+      @side_groups = Group.order('RAND()').limit(12)
       render :edit
     end
   end
@@ -48,12 +48,13 @@ class GroupsController < ApplicationController
   end
 
   def invite_index
-    @side_groups = Group.order("RAND()").limit(12)
+    @side_groups = Group.order('RAND()').limit(12)
     @group = Group.find(params[:group_id])
   end
 
   private
+
   def group_params
-    params.require(:group).permit(:group_name, :image, user_ids: [] )
+    params.require(:group).permit(:group_name, :image, user_ids: [])
   end
 end

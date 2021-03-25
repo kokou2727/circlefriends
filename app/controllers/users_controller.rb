@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def edit
-    @side_groups = Group.order("RAND()").limit(12)
+    @side_groups = Group.order('RAND()').limit(12)
     @user = User.find(params[:id])
   end
 
@@ -9,14 +9,13 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to user_path(current_user)
     else
-      @side_groups = Group.order("RAND()").limit(12)
+      @side_groups = Group.order('RAND()').limit(12)
       render :edit
     end
   end
 
-
   def show
-    @side_groups = Group.order("RAND()").limit(12)
+    @side_groups = Group.order('RAND()').limit(12)
     @user = User.find(params[:id])
     @posts = @user.posts.order('created_at DESC').limit(20).includes(:user).page(params[:page]).per(20)
   end
