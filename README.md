@@ -1,115 +1,58 @@
-# テーブル設計
+# CircleFriends
+## アプリケーション概要
+URL：　https://newcirclefriends.com/
+PC向けwebアプリケーション（レスポンシブ非対応）
 
-## users テーブル
+ネット上でもより密接な繋がりを得られるよう考案したSNSです。Twitterのような投稿のほか、サークルを作ってグループチャットやグループ通話ができます。
 
-| Column     | Type   | Options     |
-| ---------- | ------ | ----------- |
-| name       | string | null: false |
-| email      | string | null: false |
-| password   | string | null: false |
-| profile    | text   |             |
-
-### Association
-
-- has_many :posts
-- has_many :likes
-- has_many :groups through: :user_groups
-- has_many :user-groups
-- has_many :chats
-- has_many :relationships
-
-## posts テーブル
-
-| Column     | Type       | Options           |
-| ---------- | ---------- | ------------------|
-| text       | text       | null: false       |
-| created_at | datetime   | null: false       |
-| user       | references | foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- has_many :likes
-- has_many :tags through: :post_tags
-- has_many :post_tags
-
-## tags テーブル
-
-| Column     | Type       | Options           |
-| ---------- | ---------- | ------------------|
-| tag_name   | string     | null: false       |
-
-### Association
-
-- has_many :posts through: :post_tags
-- has_many :post_tags
+Basic認証　
+ID: admin　Pass: 2222
 
 
-## post_tags テーブル
+テスト用アカウント　Email test@test.com Password test123
 
-| Column     | Type       | Options           |
-| ---------- | ---------- | ------------------|
-| post       | references | foreign_key: true |
-| tag        | references | foreign_key: true |
+## 利用方法
+上記のページにアクセスするとログインページに遷移しますので、そこでログイン、またはページ下部の　Create an account　をクリックし、アカウントの新規登録を行ってください。
 
-### Association
+ログインしたらホーム画面が表示されますのでご自由にお使いください。
 
-- belongs_to :post
-- belongs_to :tag
+サークルの作成はホーム画面左の「サークル」をタップし、ページ遷移後、右上の「サークルを作成」から行います。
 
-## likes テーブル
 
-| Column     | Type       | Options           |
-| ---------- | ---------- | ------------------|
-| post       | references | foreign_key: true |
-| user       | references | foreign_key: true |
+## アプリの目的
+### 誹謗中傷のないSNS
+昨今、SNS上では賞賛の言葉だけでなく、批判的な言葉も多く見られます。これらを無くして、かつ、人と人との繋がりをより強固にすることを目的としたものです。
 
-### Association
+具体的な策としてはSNS上でのコミュニケーションをグループ化し、自分が関わりたいと思う人とだけ関われるようにしました。この目的は批判的な感情を持たないことではなく、その感情を表に出さないことです。
 
-- belongs_to :post
-- belongs_to :user
+## 機能要件
+### ユーザー機能
+ユーザ認証機能(Devise)
 
-## relationships テーブル
+ユーザ情報 登録・編集・削除
 
-| Column     | Type       | Options           |
-| ---------- | ---------- | ------------------|
-| follow_id  | references | foreign_key: true |
-| user       | references | foreign_key: true |
+フォロー機能
 
-### Association
+### ツイート機能
+ツイート投稿
 
-- belongs_to :user
+#タグ
 
-## groups テーブル
+いいね
 
-| Column     | Type       | Options           |
-| ---------- | ---------- | ------------------|
-| group_name | string     | null false        |
+### グループ機能
+チャット（メッセージ送信・一覧）
 
-### Association
+ユーザー招待
 
-- has_many :users
+グループ情報 作成・編集・削除
 
-## user_groups テーブル
+ビデオ通話
 
-| Column     | Type       | Options           |
-| ---------- | ---------- | ------------------|
-| group      | references | foreign_key: true |
-| user       | references | foreign_key: true |
+### 検索機能
+投稿・ユーザー・グループ
+### 実装予定の機能
+通知機能
 
-### Association
-
-- belongs_to :group
-- belongs_to :user
-
-## chats テーブル
-
-| Column     | Type       | Options           |
-| ---------- | ---------- | ------------------|
-| group      | references | foreign_key: true |
-| user       | references | foreign_key: true |
-
-### Association
-
-- belongs_to :group
-- belongs_to :user
+## データベース設計
+![image](https://user-images.githubusercontent.com/78017749/112417255-77bf2f00-8d6a-11eb-9569-cc17f81494b7.png)
