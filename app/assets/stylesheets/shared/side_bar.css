@@ -128,3 +128,16 @@
 .current-page {
   color: #f39c12;
 }
+
+.footer-user {
+  padding: 0 20px;
+}
+
+.side-user-icon {
+  object-fit: cover;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+	border-radius:50%;
+  border: solid 1px #d6d3d3;
+}

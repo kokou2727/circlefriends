@@ -104,6 +104,11 @@
   
   <div class='side-footer'>
     <div class='footer-user'>
+    <% if current_user.image.attached? %>
+      <%= image_tag(current_user.image, class:"side-user-icon") %>
+    <% else %>
+      <%= image_tag("profile.png", class:"side-user-icon") %>
+    <% end %>
       <%= current_user.name %>
     </div>
   </div>
