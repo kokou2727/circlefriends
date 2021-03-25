@@ -13,36 +13,90 @@
     <div style='width: calc(100% - 25%); height: 100%'>
     <ul class='side-list'>
       <%= link_to root_path do%>
-        <div class='home'>
-          <div class="side-icon-area">
-            <i class="fas fa-home side-icon"></i>
+        <% if current_page?(root_path) %>
+          <div class='home current-page'>
+            <div class="side-icon-area">
+              <i class="fas fa-home side-icon"></i>
+            </div>
+            <li class="home-list">ホーム</li>
           </div>
-          <li class="home-list">ホーム</li>
-        </div>
+        <% else %>
+          <div class='home'>
+            <div class="side-icon-area">
+              <i class="fas fa-home side-icon"></i>
+            </div>
+            <li class="home-list">ホーム</li>
+          </div>
+        <% end %>
       <% end %>
       <%= link_to groups_path do%>
-        <div class='circle'>
-          <div class="side-icon-area">
-            <i class="fas fa-hands-helping side-icon"></i>
+        <% if current_page?(groups_path) || current_page?(new_group_path) %>
+          <div class='circle current-page'>
+            <div class="side-icon-area">
+              <i class="fas fa-hands-helping side-icon"></i>
+            </div>
+            <li class="circle-list">サークル</li>
           </div>
-          <li class="circle-list">サークル</li>
-        </div>
+        <% else %>
+          <% if @group.present? %>
+            <% if current_page?(edit_group_path(@group)) || current_page?(groups_invite_index_path(@group)) || current_page?(group_chats_path(@group)) %>
+              <div class='circle current-page'>
+                <div class="side-icon-area">
+                  <i class="fas fa-hands-helping side-icon"></i>
+                </div>
+                <li class="circle-list">サークル</li>
+              </div>
+            <% else %>
+              <div class='circle'>
+                <div class="side-icon-area">
+                  <i class="fas fa-hands-helping side-icon"></i>
+                </div>
+                <li class="circle-list">サークル</li>
+              </div>
+            <% end %>
+          <% else %>
+            <div class='circle'>
+              <div class="side-icon-area">
+                <i class="fas fa-hands-helping side-icon"></i>
+              </div>
+              <li class="circle-list">サークル</li>
+            </div>
+          <% end %>
+        <% end %>
       <% end %>
       <%= link_to user_path(current_user) do%>
-        <div class='profile'>
-          <div class="side-icon-area">
-            <i class="fas fa-user side-icon"></i>
-        </div>
-          <li class="profile-list">プロフィール</li>
-        </div>
+        <% if current_page?(user_path(current_user)) || current_page?(edit_user_path(current_user))%>
+          <div class='profile current-page'>
+            <div class="side-icon-area">
+              <i class="fas fa-user side-icon"></i>
+          </div>
+            <li class="profile-list">プロフィール</li>
+          </div>
+        <% else %>
+          <div class='profile'>
+            <div class="side-icon-area">
+              <i class="fas fa-user side-icon"></i>
+          </div>
+            <li class="profile-list">プロフィール</li>
+          </div>
+        <% end %>
       <% end %>
       <%= link_to searches_path, remote: true do%>
+      <% if current_page?(searches_path) || current_page?(searches_search_name_path) || current_page?(searches_search_job_path) || current_page?(searches_search_group_path)%>
+        <div class='side-search current-page'>
+          <div class="side-icon-area">
+            <i class="fas fa-search side-icon"></i>
+          </div>
+          <li class="search-list">検索</li>
+        </div>
+      <% else %>
         <div class='side-search'>
           <div class="side-icon-area">
             <i class="fas fa-search side-icon"></i>
           </div>
           <li class="search-list">検索</li>
         </div>
+      <% end %>
       <% end %>
     </ul>
     </div>

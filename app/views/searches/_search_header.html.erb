@@ -10,30 +10,54 @@
   <div class="search-path-areas">
     <div class="search-path">
       <%= link_to searches_path(search: @search_result), style:"text-decoration: none", remote: true do %>
-        <div class="search-path-area">
-          <span>ツイート</span>
-        </div>
+        <% if current_page?(searches_path) %>
+          <div class="search-path-area current-search">
+            <span>ツイート</span>
+          </div>
+        <% else %>
+          <div class="search-path-area">
+            <span>ツイート</span>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <div class="search-path">
       <%= link_to searches_search_name_path(search: @search_result), style:"text-decoration: none" do %>
-        <div class="search-path-area">
-          <span>アカウント</span>
-        </div>
+        <% if current_page?(searches_search_name_path) %>
+          <div class="search-path-area current-search">
+            <span>アカウント</span>
+          </div>
+        <% else %>
+          <div class="search-path-area">
+            <span>アカウント</span>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <div class="search-path">
       <%= link_to searches_search_job_path(search: @search_result), style:"text-decoration: none" do %>
-        <div class="search-path-area">
-          <span>お仕事</span>
-        </div>
+        <% if current_page?(searches_search_job_path) %>
+          <div class="search-path-area current-search">
+            <span>お仕事</span>
+          </div>
+        <% else %>
+          <div class="search-path-area">
+            <span>お仕事</span>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <div class="search-path">
       <%= link_to searches_search_group_path(search: @search_result), style:"text-decoration: none" do %>
-        <div class="search-path-area">
-          <span>サークル</span>
-        </div>
+        <% if current_page?(searches_search_group_path) %>
+          <div class="search-path-area current-search">
+            <span>サークル</span>
+          </div>
+        <% else %>
+          <div class="search-path-area">
+            <span>サークル</span>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
