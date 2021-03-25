@@ -1,18 +1,18 @@
 # CircleFriends
 ## アプリケーション概要
-URL：　https://newcirclefriends.com/
+URL： https://newcirclefriends.com/
 PC向けwebアプリケーション（レスポンシブ非対応）
 
 ネット上でもより密接な繋がりを得られるよう考案したSNSです。Twitterのような投稿のほか、サークルを作ってグループチャットやグループ通話ができます。
 
-Basic認証　
-ID: admin　Pass: 2222
+Basic認証
+ID: admin Pass: 2222
 
 
-テスト用アカウント　Email test@test.com Password test123
+テスト用アカウント Email test@test.com Password test123
 
 ## 利用方法
-上記のページにアクセスするとログインページに遷移しますので、そこでログイン、またはページ下部の　Create an account　をクリックし、アカウントの新規登録を行ってください。
+上記のページにアクセスするとログインページに遷移しますので、そこでログイン、またはページ下部の Create an account をクリックし、アカウントの新規登録を行ってください。
 
 ログインしたらホーム画面が表示されますのでご自由にお使いください。
 
