@@ -55,3 +55,4 @@ ID: admin　Pass: 2222
 通知機能
 
 ## データベース設計
+![image](https://user-images.githubusercontent.com/78017749/112417255-77bf2f00-8d6a-11eb-9569-cc17f81494b7.png)
