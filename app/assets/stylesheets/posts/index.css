@@ -96,3 +96,7 @@
 .hidden{
   display: none;
 }
+
+.fa-spinner {
+  font-size: 30px;
+}

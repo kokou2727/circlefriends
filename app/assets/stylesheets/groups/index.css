@@ -84,3 +84,9 @@
   align-items: center;
   color: rgb(0, 255, 149);
 }
+
+.loading{
+  text-align: center;
+  padding: 20px 0;
+  color: #f39c12;
+}

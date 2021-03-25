@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def show
     @side_groups = Group.order("RAND()").limit(12)
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = @user.posts.order('created_at DESC').limit(20).includes(:user).page(params[:page]).per(20)
   end
 
   def add_user_to_group
