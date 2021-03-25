@@ -22,6 +22,9 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :profile,  length: { maximum: 250 }
 
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  validates :password, format: { with: PASSWORD_REGEX, message: 'Include both letters and numbers' }
+
   def follow(other_user)
     unless self == other_user
       self.relationships.find_or_create_by(follow_id: other_user.id)
