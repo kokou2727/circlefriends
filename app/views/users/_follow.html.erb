@@ -12,10 +12,10 @@
   <% end %>
 <% end %>
 <div class='follow-follower'>
-  <%= link_to "#", class:"follow-link" do %>
+  <%= link_to relationships_follow_index_path(user_id: user.id) do %>
     <span class='follow-count'><%= "#{user.followings.count}" %></span><span class="follow">フォロー中<span>
   <% end %>
-  <%= link_to "#" do %>
+  <%= link_to relationships_follower_index_path(user_id: user.id) do %>
     <span class='follower-count'><%= "#{user.followers.count}" %></span><span class="follower">フォロワー<span>
   <% end %>
 </div>

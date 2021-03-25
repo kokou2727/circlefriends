@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'searches/search_job'
   get 'searches/search_group'
   get 'groups/invite_index'
+  get 'relationships/follow_index'
+  get 'relationships/follower_index'
 
   root to: "posts#index"
   resources :posts, only: [:index, :create] do

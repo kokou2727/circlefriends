@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class='side-bar'>
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class='main'>
+    <%= render 'follow_header'%>
+    <div class='search-main'>
+      <% @users.each do |user| %>
+        <%= link_to user_path(user) do%>
+          <div class="group-information">
+            <% if user.image.present? %>
+              <%= image_tag(user.image, class:"post-icon")%>
+            <% else %>
+              <%= image_tag("profile.png", class:"post-icon ")%>
+            <% end %>
+            <div class="group-name-message">
+              <div style="display: flex">
+                <div class="group-names">
+                  <%= user.name %>
+                </div>
+                <% if user.job.present? %>
+                  <div class="user-job">
+                    <%= link_to "#{user.job}", searches_search_job_path(search: user.job) %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="group-message">
+                <% if user.profile.present? %>
+                  <%= user.profile %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class='left-bar'>
+    <%= render "shared/left_bar" %>
+  <div>
+</div>

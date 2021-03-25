@@ -1,0 +1,40 @@
+<div class="follow-header">
+  <div class="follow-header-title">
+    <%= link_to root_path do %>
+      <div class="back-btn-area">
+        <i class="fas fa-arrow-left back-icon"></i>
+      </div>
+    <% end %>
+    <h2 class='my-page-name'>
+      <%= @user.name %>
+    </h2>
+  </div>
+  <div class="follow-path-areas">
+    <div class="follow-path">
+      <%= link_to relationships_follow_index_path(user_id: @user.id), style:"text-decoration: none" do %>
+        <% if current_page?(relationships_follow_index_path) %>
+          <div class="search-path-area current-search">
+            <span>フォロー中</span>
+          </div>
+        <% else %>
+          <div class="search-path-area">
+            <span>フォロー中</span>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="follow-path">
+      <%= link_to relationships_follower_index_path(user_id: @user.id), style:"text-decoration: none" do %>
+        <% if current_page?(relationships_follower_index_path) %>
+          <div class="search-path-area current-search">
+            <span>フォロワー</span>
+          </div>
+        <% else %>
+          <div class="search-path-area">
+            <span>フォロワー</span>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
