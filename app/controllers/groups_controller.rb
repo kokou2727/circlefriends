@@ -17,8 +17,7 @@ class GroupsController < ApplicationController
       group_user.update(permit: true)
       redirect_to group_chats_path(@group)
     else
-      @side_groups = Group.order("RAND()").limit(12)
-      render :new
+      redirect_to new_group_path
     end
   end
 
