@@ -1,7 +1,4 @@
-<div class="post-scroll">
-  <p id="new-post"></p>
-  <% @posts.each do |post| %>
-    <div class="post">
+<div class="post">
       <div class='post-icon-area'>
         <% if post.user.image.present? %>
           <%= link_to image_tag(post.user.image, class:"post-icon"), user_path(post.user_id) %>
@@ -39,6 +36,3 @@
         </div>
       </div>
     </div>
-  <% end %>
-  <%= paginate @posts %>
-</div>
