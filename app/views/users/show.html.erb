@@ -66,31 +66,12 @@
             <div class="profile-message">
               <%= @user.profile %>
             </div>
-            <% unless current_user == @user %>
-              <% if current_user.following?(@user) %>
-                <%= form_for(current_user.relationships.find_by(follow_id: @user.id), html: { method: :delete }) do |f| %>
-                  <%= hidden_field_tag :follow_id, @user.id %>
-                  <%= f.submit 'Unfollow', class: 'unfollw-button' %>
-                <% end %>
-              <% else %>
-                <%= form_for(current_user.relationships.build) do |f| %>
-                  <%= hidden_field_tag :follow_id, @user.id %>
-                  <%= f.submit 'Follow', class: 'follw-button' %>
-                <% end %>
-              <% end %>
-            <% end %>
-            <div class='follow-follower'>
-              <%= link_to "#", class:"follow-link" do %>
-                <span class='follow-count'><%= "#{@user.followings.count}" %></span><span class="follow">フォロー中<span>
-              <% end %>
-              <%= link_to "#" do %>
-                <span class='follower-count'><%= "#{@user.followers.count}" %></span><span class="follower">フォロワー<span>
-              <% end %>
+            <div id="follow-area<%= @user.id %>">
+              <%= render partial: 'follow', locals: { user: @user } %>
             </div>
             </figcaption>
         </figure>
       </div>
-      
       <div class='my-posts-list'>
         <%= render partial: "posts/post" %>
       </div>
