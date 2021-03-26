@@ -30,8 +30,13 @@
   margin-left: 10px;
 }
 
-.post-job a:link,.post-job a:visited,.post-job a:hover,.post-job a:active {
+.post-job a:link,.post-job a:visited {
   color: #f39c12;
+}
+
+.post-job a:hover,.post-job a:active {
+  color: #f39c12;
+  border-bottom: 1px solid #f39c12;
 }
 
 .nakaten {
@@ -92,4 +97,8 @@
   width: 90%;
   height: auto;
   border-radius: 10%;
+}
+
+.post-user-page:hover {
+  border-bottom: 1px solid black;
 }

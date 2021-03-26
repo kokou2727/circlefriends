@@ -5,11 +5,9 @@
 
   <div class='my-page'>
     <div class='my-page-header'>
-      <%= link_to root_path do %>
-        <div class="back-btn-area">
-          <i class="fas fa-arrow-left back-icon"></i>
-        </div>
-      <% end %>
+      <div class="back-btn-area" onClick="history.back(); return false;">
+        <i class="fas fa-arrow-left back-icon"></i>
+      </div>
       <h2 class='my-page-name'>
         <%= @user.name %>
       </h2>

@@ -17,7 +17,7 @@
           <div class='post-area'>
             <div class="upper-post">
               <div class="post-user">
-                <%= link_to "#{post.user.name}", user_path(post.user_id) %>
+                <%= link_to "#{post.user.name}", user_path(post.user_id), class:"post-user-page" %>
               </div>
               <% if post.user.job.present? %>
                 <div class="post-job">

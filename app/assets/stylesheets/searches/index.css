@@ -70,10 +70,16 @@
   margin-left: 10px;
   display: flex;
   align-items: center;
+  color: #f39c12;
 }
 
-.user-job a:link,.user-job a:visited,.user-job a:hover,.user-job a:active {
+.user-job a:link,.user-job a:visited {
   color: #f39c12;
+}
+
+.user-job a:hover,.user-job a:active {
+  color: #f39c12;
+  border-bottom: 1px solid #f39c12;
 }
 
 .current-search {

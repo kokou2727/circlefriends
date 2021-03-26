@@ -5,8 +5,13 @@
 
   <div class='chats'>
     <div class='chats-header'>
-      <div class="group-name">
-        <%= @group.group_name %>
+      <div style="display:flex; align-items: center">
+        <div class="back-btn-area" onClick="history.back(); return false;">
+          <i class="fas fa-arrow-left back-icon"></i>
+        </div>
+        <div class="group-name">
+          <%= @group.group_name %>
+        </div>
       </div>
       <div class="group-actions">
         <%= link_to groups_invite_index_path(@group, group_id: @group.id) do %>

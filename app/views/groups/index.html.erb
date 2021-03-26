@@ -4,8 +4,13 @@
   </div>
   <div class='group-page'>
     <div class="group-page-header">
-      <div class="group-list-page">
-        サークル一覧
+      <div style="display: flex">
+        <div class="back-btn-area" onClick="history.back(); return false;">
+          <i class="fas fa-arrow-left back-icon"></i>
+        </div>
+        <div class="group-list-page">
+          サークル一覧
+        </div>
       </div>
       <%= link_to new_group_path do%>
         <div class="group-new">サークルを作成する</div>

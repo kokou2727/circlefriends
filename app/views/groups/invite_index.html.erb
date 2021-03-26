@@ -4,8 +4,13 @@
   </div>
   <div class='main'>
     <div class="invite-header">
-      <div class="group-list-page">
-        <%= @group.group_name %>
+      <div style="display: flex">
+        <div class="back-btn-area" onClick="history.back(); return false;">
+            <i class="fas fa-arrow-left back-icon"></i>
+        </div>
+        <div class="group-list-page">
+          <%= @group.group_name %>
+        </div>
       </div>
       <%= link_to group_chats_path(@group), class:"group_path", data: {"turbolinks" => false} do%>
         <div class="invite-btn" id="invite-btn">ユーザーを招待する</div>
@@ -27,7 +32,7 @@
                 </div>
                 <% if user.job.present? %>
                   <div class="user-job">
-                    <%= link_to "#{user.job}", searches_search_job_path(search: user.job) %>
+                    <%= user.job %>
                   </div>
                 <% end %>
               </div>

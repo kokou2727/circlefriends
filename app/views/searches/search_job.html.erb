@@ -20,7 +20,7 @@
                 </div>
                 <% if user.job.present? %>
                   <div class="user-job">
-                    <%= link_to "#{user.job}", searches_search_job_path(search: user.job) %>
+                    <%= user.job %>
                   </div>
                 <% end %>
               </div>

@@ -79,7 +79,7 @@
 .chat-date{
   color: #999;
   font-size: 12px;
-  margin: 0 3px;
+  margin: 0 7px;
 }
 
 .chat-right  {
@@ -115,5 +115,12 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: rgb(219, 205, 187);
+}
+
+.message-send-icon-area:hover {
+  background-color: rgb(255, 244, 227)
+}
+
+.group-action-icon:hover {
+  color: #f39c12;
 }

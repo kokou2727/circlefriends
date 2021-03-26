@@ -1,5 +1,5 @@
 <div class="post-scroll">
-  <p id="new-post"></p>
+  <div id="new-post"></div>
   <% @posts.each do |post| %>
     <div class="post">
       <div class='post-icon-area'>
@@ -12,7 +12,7 @@
       <div class='post-area'>
         <div class="upper-post">
           <div class="post-user">
-            <%= link_to "#{post.user.name}", user_path(post.user_id) %>
+            <%= link_to "#{post.user.name}", user_path(post.user_id), class:"post-user-page" %>
           </div>
           <% if post.user.job.present? %>
             <div class="post-job">

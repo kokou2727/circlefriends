@@ -17,10 +17,13 @@
 }
 
 .back-btn-area {
+  width: 35px;
+  height: 35px;
   padding: 8px;
   border-radius: 50%;
   display: flex;
   align-items: center;
+  margin: 0 20px 0 0;
 }
 
 .back-btn-area:hover {
@@ -29,7 +32,7 @@
 
 .my-page-name {
   font-size: 25px;
-  margin: 0 0 0 20px;
+  margin: 0;
 }
 
 .profile-edit-path-area {
@@ -46,14 +49,21 @@
   font-weight: 600;
 }
 
-.unfollow-button {
-  width: 60px;
-  height: auto;
+.follow-action-btn{
+  margin-top: 10px;
+  border-radius: 16px;
+  padding: 5px 10px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(185, 174, 160);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
 }
 
-.follw-button{
-  width: 60px;
-  height: auto;
+.follow-action-btn:hover {
+  background-color: rgb(152, 144, 134);
 }
 
 .follow-follower {
