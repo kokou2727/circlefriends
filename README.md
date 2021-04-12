@@ -56,9 +56,13 @@ ID: admin Pass: 2222
 ### 実装予定の機能
 通知機能
 
-## データベース設計
-![image](https://user-images.githubusercontent.com/78017749/112417255-77bf2f00-8d6a-11eb-9569-cc17f81494b7.png)
 
 ## テスト動画
 ### ビデオ通話
 [![Image from Gyazo](https://i.gyazo.com/0e71d0be867512d9a254b79b269d01db.gif)](https://gyazo.com/0e71d0be867512d9a254b79b269d01db)
+
+### 無限スクロール機能
+[![Image from Gyazo](https://i.gyazo.com/890bd2830eb6bc968d143c7057f65f85.gif)](https://gyazo.com/890bd2830eb6bc968d143c7057f65f85)
+
+## データベース設計
+![image](https://user-images.githubusercontent.com/78017749/112417255-77bf2f00-8d6a-11eb-9569-cc17f81494b7.png)
